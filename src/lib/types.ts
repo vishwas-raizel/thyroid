@@ -126,6 +126,18 @@ export interface DataQualityIssue {
   message: string;
 }
 
+export interface AuthUser {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  department: string;
+  hospital: string;
+  licenseNumber?: string;
+  avatar?: string;
+  lastLoginAt?: string;
+}
+
 export type ViewType =
   | "dashboard"
   | "patients"

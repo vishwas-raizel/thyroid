@@ -53,6 +53,8 @@ import {
 } from '@/components/ui/alert-dialog';
 
 import { useAppStore } from '@/lib/store';
+import { LoginView } from '@/components/auth/LoginView';
+import { UserMenu } from '@/components/auth/UserMenu';
 import type {
   Patient, MedicalReport, LabValue, SymptomEntry,
   ScreeningResult, Prediction, ScreeningFactor, ViewType,
@@ -234,10 +236,14 @@ function Sidebar() {
             })}
           </nav>
 
-          <div className="p-4 border-t border-gray-100">
-            <div className="flex items-center gap-2 text-xs text-gray-400">
-              <Activity className="h-3.5 w-3.5" />
-              <span>System Active</span>
+          <div className="p-3 border-t border-gray-100 space-y-2.5">
+            <UserMenu compact />
+            <div className="flex items-center justify-between text-[11px] text-gray-400 px-1">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span>System Active</span>
+              </div>
+              <span className="font-mono text-[10px]">v2.4</span>
             </div>
           </div>
         </div>
@@ -3515,6 +3521,7 @@ function TrendsView() {
 // ============================================================
 
 function AdminView() {
+  const { currentUser, logout } = useAppStore();
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [clearing, setClearing] = useState(false);
   const [systemInfo, setSystemInfo] = useState<Record<string, string>>({});
@@ -3561,6 +3568,36 @@ function AdminView() {
         <h2 className="text-2xl font-bold text-gray-900">Admin</h2>
         <p className="text-sm text-gray-500 mt-1">System information and data management</p>
       </div>
+
+      {currentUser && (
+        <Card className="p-4 border border-teal-100 bg-gradient-to-r from-teal-50/50 to-white">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                {currentUser.name.replace('Dr. ', '').slice(0, 2).toUpperCase()}
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900">{currentUser.name}</h3>
+                <p className="text-xs text-gray-500">{currentUser.role} • {currentUser.hospital}</p>
+                <p className="text-[11px] text-teal-700 font-mono mt-0.5">
+                  {currentUser.email} {currentUser.licenseNumber ? `• License: ${currentUser.licenseNumber}` : ''}
+                </p>
+              </div>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                logout();
+                toast.info('Signed out of clinical workstation');
+              }}
+              className="border-red-200 text-red-600 hover:bg-red-50 text-xs shrink-0"
+            >
+              Sign Out / Switch Profile
+            </Button>
+          </div>
+        </Card>
+      )}
 
       <Card className="p-4">
         <h3 className="text-sm font-medium text-gray-700 mb-3">System Information</h3>
@@ -3628,7 +3665,19 @@ function Footer() {
 // ============================================================
 
 export default function Home() {
-  const { currentView, sidebarOpen, setSidebarOpen, setCurrentView } = useAppStore();
+  const {
+    currentView,
+    sidebarOpen,
+    setSidebarOpen,
+    setCurrentView,
+    isAuthenticated,
+    isAuthHydrated,
+    initAuth,
+  } = useAppStore();
+
+  useEffect(() => {
+    initAuth();
+  }, [initAuth]);
 
   const renderView = useCallback(() => {
     switch (currentView) {
@@ -3644,6 +3693,24 @@ export default function Home() {
     }
   }, [currentView]);
 
+  if (!isAuthHydrated) {
+    return (
+      <div className="min-h-screen w-full bg-slate-950 flex flex-col items-center justify-center space-y-4">
+        <div className="w-12 h-12 rounded-xl bg-teal-600 flex items-center justify-center animate-pulse">
+          <Stethoscope className="w-6 h-6 text-white" />
+        </div>
+        <div className="flex items-center gap-2 text-teal-400 text-xs font-mono">
+          <div className="w-3 h-3 border-2 border-teal-400 border-t-transparent rounded-full animate-spin" />
+          <span>Initializing Clinical Suite...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <LoginView />;
+  }
+
   return (
     <TooltipProvider>
       <div className="min-h-screen flex flex-col bg-gray-50/50">
@@ -3651,19 +3718,28 @@ export default function Home() {
           <Sidebar />
           <main className="flex-1 min-w-0">
             {/* Top Bar */}
-            <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 py-3 flex items-center gap-3">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden h-8 w-8"
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-              >
-                {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-              </Button>
-              <div className="flex-1" />
-              <div className="flex items-center gap-2 text-xs text-gray-400">
-                <Activity className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Clinical Screening Platform</span>
+            <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 py-2.5 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="lg:hidden h-8 w-8"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                  {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                </Button>
+                <div className="flex items-center gap-2 text-xs text-gray-500">
+                  <Activity className="w-3.5 h-3.5 text-teal-600" />
+                  <span className="hidden sm:inline font-medium">Clinical Decision Support Platform</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-medium">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>HIPAA Secure Session</span>
+                </div>
+                <UserMenu />
               </div>
             </header>
 

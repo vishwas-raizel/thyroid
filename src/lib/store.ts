@@ -1,7 +1,15 @@
 import { create } from "zustand";
-import type { Patient, MedicalReport, LabValue, SymptomEntry, ScreeningResult, Prediction, ViewType } from "./types";
+import type { Patient, MedicalReport, LabValue, SymptomEntry, ScreeningResult, Prediction, ViewType, AuthUser } from "./types";
 
 interface AppState {
+  // Auth State
+  currentUser: AuthUser | null;
+  isAuthenticated: boolean;
+  isAuthHydrated: boolean;
+  login: (user: AuthUser, remember?: boolean) => void;
+  logout: () => void;
+  initAuth: () => void;
+
   // Navigation
   currentView: ViewType;
   selectedPatientId: string | null;
@@ -49,6 +57,46 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
+  // Auth State
+  currentUser: null,
+  isAuthenticated: false,
+  isAuthHydrated: false,
+  login: (user: AuthUser, remember = true) => {
+    if (typeof window !== "undefined" && remember) {
+      try {
+        localStorage.setItem("thyroid_ai_auth_user", JSON.stringify(user));
+      } catch (e) {
+        console.error("Failed to persist user session", e);
+      }
+    }
+    set({ currentUser: user, isAuthenticated: true });
+  },
+  logout: () => {
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.removeItem("thyroid_ai_auth_user");
+      } catch (e) {
+        console.error("Failed to clear user session", e);
+      }
+    }
+    set({ currentUser: null, isAuthenticated: false });
+  },
+  initAuth: () => {
+    if (typeof window !== "undefined") {
+      try {
+        const stored = localStorage.getItem("thyroid_ai_auth_user");
+        if (stored) {
+          const user = JSON.parse(stored) as AuthUser;
+          set({ currentUser: user, isAuthenticated: true, isAuthHydrated: true });
+          return;
+        }
+      } catch (e) {
+        console.error("Failed to load user session", e);
+      }
+    }
+    set({ isAuthHydrated: true });
+  },
+
   // Navigation
   currentView: "dashboard",
   selectedPatientId: null,

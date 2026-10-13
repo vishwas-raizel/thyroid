@@ -1,0 +1,1559 @@
+[
+  {
+    "id": "THY-001",
+    "index": 1,
+    "type": "thyroid",
+    "patientName": "Malini Shetty",
+    "age": 44,
+    "uhid": "THY-001",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_01.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_01.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "2.48 mIU/L",
+      "Free Thyroxine (FT4)": "1.26 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.64 pg/mL",
+      "Total Thyroxine (Total T4)": "7.5 μg/dL",
+      "Total Triiodothyronine (Total T3)": "156.6 ng/dL",
+      "Anti-TPO Antibodies": "15.5 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "20.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-002",
+    "index": 2,
+    "type": "thyroid",
+    "patientName": "Deepika Reddy",
+    "age": 33,
+    "uhid": "THY-002",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_02.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_02.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "1.36 mIU/L",
+      "Free Thyroxine (FT4)": "1.2 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.63 pg/mL",
+      "Total Thyroxine (Total T4)": "7.9 μg/dL",
+      "Total Triiodothyronine (Total T3)": "113.4 ng/dL",
+      "Anti-TPO Antibodies": "16.6 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "6.7 IU/mL"
+    }
+  },
+  {
+    "id": "THY-003",
+    "index": 3,
+    "type": "thyroid",
+    "patientName": "Priya Mukherjee",
+    "age": 23,
+    "uhid": "THY-003",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_03.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_03.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "2.5 mIU/L",
+      "Free Thyroxine (FT4)": "1.34 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.73 pg/mL",
+      "Total Thyroxine (Total T4)": "10.3 μg/dL",
+      "Total Triiodothyronine (Total T3)": "139.2 ng/dL",
+      "Anti-TPO Antibodies": "6 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "19.5 IU/mL"
+    }
+  },
+  {
+    "id": "THY-004",
+    "index": 4,
+    "type": "thyroid",
+    "patientName": "Deepika Pillai",
+    "age": 41,
+    "uhid": "THY-004",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_04.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_04.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "2.79 mIU/L",
+      "Free Thyroxine (FT4)": "1.07 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.85 pg/mL",
+      "Total Thyroxine (Total T4)": "8.7 μg/dL",
+      "Total Triiodothyronine (Total T3)": "143.3 ng/dL",
+      "Anti-TPO Antibodies": "8.1 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "21.6 IU/mL"
+    }
+  },
+  {
+    "id": "THY-005",
+    "index": 5,
+    "type": "thyroid",
+    "patientName": "Ishita Hegde",
+    "age": 26,
+    "uhid": "THY-005",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_05.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_05.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "1.64 mIU/L",
+      "Free Thyroxine (FT4)": "1.24 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.78 pg/mL",
+      "Total Thyroxine (Total T4)": "8.2 μg/dL",
+      "Total Triiodothyronine (Total T3)": "113.8 ng/dL",
+      "Anti-TPO Antibodies": "5.2 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "6.4 IU/mL"
+    }
+  },
+  {
+    "id": "THY-006",
+    "index": 6,
+    "type": "thyroid",
+    "patientName": "Uma Pillai",
+    "age": 46,
+    "uhid": "THY-006",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_06.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_06.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "1.93 mIU/L",
+      "Free Thyroxine (FT4)": "1.28 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.42 pg/mL",
+      "Total Thyroxine (Total T4)": "9.8 μg/dL",
+      "Total Triiodothyronine (Total T3)": "125.8 ng/dL",
+      "Anti-TPO Antibodies": "17.7 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "14.7 IU/mL"
+    }
+  },
+  {
+    "id": "THY-007",
+    "index": 7,
+    "type": "thyroid",
+    "patientName": "Varsha Choudhury",
+    "age": 43,
+    "uhid": "THY-007",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_07.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_07.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "2 mIU/L",
+      "Free Thyroxine (FT4)": "1.01 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.8 pg/mL",
+      "Total Thyroxine (Total T4)": "7.9 μg/dL",
+      "Total Triiodothyronine (Total T3)": "129.8 ng/dL",
+      "Anti-TPO Antibodies": "7 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "9.6 IU/mL"
+    }
+  },
+  {
+    "id": "THY-008",
+    "index": 8,
+    "type": "thyroid",
+    "patientName": "Kavya Joshi",
+    "age": 35,
+    "uhid": "THY-008",
+    "category": "Thyroid Panel (Euthyroid / Normal)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_08.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_08.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "1.43 mIU/L",
+      "Free Thyroxine (FT4)": "1.38 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.15 pg/mL",
+      "Total Thyroxine (Total T4)": "9.8 μg/dL",
+      "Total Triiodothyronine (Total T3)": "161.6 ng/dL",
+      "Anti-TPO Antibodies": "9.2 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "6.2 IU/mL"
+    }
+  },
+  {
+    "id": "THY-009",
+    "index": 9,
+    "type": "thyroid",
+    "patientName": "Nalini Hegde",
+    "age": 49,
+    "uhid": "THY-009",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_09.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_09.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "33.6 mIU/L",
+      "Free Thyroxine (FT4)": "0.52 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.67 pg/mL",
+      "Total Thyroxine (Total T4)": "3.3 μg/dL",
+      "Total Triiodothyronine (Total T3)": "68.3 ng/dL",
+      "Anti-TPO Antibodies": "56.9 IU/mL"
+    }
+  },
+  {
+    "id": "THY-010",
+    "index": 10,
+    "type": "thyroid",
+    "patientName": "Sanjana Ghosh",
+    "age": 27,
+    "uhid": "THY-010",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_10.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_10.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "33.57 mIU/L",
+      "Free Thyroxine (FT4)": "0.49 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.94 pg/mL",
+      "Total Thyroxine (Total T4)": "3 μg/dL",
+      "Total Triiodothyronine (Total T3)": "74.7 ng/dL",
+      "Anti-TPO Antibodies": "48.4 IU/mL"
+    }
+  },
+  {
+    "id": "THY-011",
+    "index": 11,
+    "type": "thyroid",
+    "patientName": "Chhavi Kulkarni",
+    "age": 55,
+    "uhid": "THY-011",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_11.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_11.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "10.04 mIU/L",
+      "Free Thyroxine (FT4)": "0.6 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.67 pg/mL",
+      "Total Thyroxine (Total T4)": "2.8 μg/dL",
+      "Total Triiodothyronine (Total T3)": "66 ng/dL",
+      "Anti-TPO Antibodies": "40.4 IU/mL"
+    }
+  },
+  {
+    "id": "THY-012",
+    "index": 12,
+    "type": "thyroid",
+    "patientName": "Bhavana Rao",
+    "age": 21,
+    "uhid": "THY-012",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_12.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_12.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "32.48 mIU/L",
+      "Free Thyroxine (FT4)": "0.42 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.94 pg/mL",
+      "Total Thyroxine (Total T4)": "3.5 μg/dL",
+      "Total Triiodothyronine (Total T3)": "63.1 ng/dL",
+      "Anti-TPO Antibodies": "50 IU/mL"
+    }
+  },
+  {
+    "id": "THY-013",
+    "index": 13,
+    "type": "thyroid",
+    "patientName": "Uma Sharma",
+    "age": 22,
+    "uhid": "THY-013",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_13.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_13.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "22.99 mIU/L",
+      "Free Thyroxine (FT4)": "0.47 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.6 pg/mL",
+      "Total Thyroxine (Total T4)": "4.1 μg/dL",
+      "Total Triiodothyronine (Total T3)": "73.1 ng/dL",
+      "Anti-TPO Antibodies": "36.7 IU/mL"
+    }
+  },
+  {
+    "id": "THY-014",
+    "index": 14,
+    "type": "thyroid",
+    "patientName": "Anjali Rao",
+    "age": 52,
+    "uhid": "THY-014",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_14.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_14.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "11.22 mIU/L",
+      "Free Thyroxine (FT4)": "0.63 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.7 pg/mL",
+      "Total Thyroxine (Total T4)": "3.4 μg/dL",
+      "Total Triiodothyronine (Total T3)": "58 ng/dL",
+      "Anti-TPO Antibodies": "33.1 IU/mL"
+    }
+  },
+  {
+    "id": "THY-015",
+    "index": 15,
+    "type": "thyroid",
+    "patientName": "Keerthi Deshmukh",
+    "age": 42,
+    "uhid": "THY-015",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_15.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_15.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "24.48 mIU/L",
+      "Free Thyroxine (FT4)": "0.64 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.75 pg/mL",
+      "Total Thyroxine (Total T4)": "3.1 μg/dL",
+      "Total Triiodothyronine (Total T3)": "76 ng/dL",
+      "Anti-TPO Antibodies": "44.5 IU/mL"
+    }
+  },
+  {
+    "id": "THY-016",
+    "index": 16,
+    "type": "thyroid",
+    "patientName": "Ishita Sharma",
+    "age": 34,
+    "uhid": "THY-016",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_16.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_16.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "28.64 mIU/L",
+      "Free Thyroxine (FT4)": "0.61 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.05 pg/mL",
+      "Total Thyroxine (Total T4)": "3.6 μg/dL",
+      "Total Triiodothyronine (Total T3)": "66.1 ng/dL",
+      "Anti-TPO Antibodies": "48.3 IU/mL"
+    }
+  },
+  {
+    "id": "THY-017",
+    "index": 17,
+    "type": "thyroid",
+    "patientName": "Saranya Shetty",
+    "age": 22,
+    "uhid": "THY-017",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_17.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_17.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "26.51 mIU/L",
+      "Free Thyroxine (FT4)": "0.42 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.01 pg/mL",
+      "Total Thyroxine (Total T4)": "2.6 μg/dL",
+      "Total Triiodothyronine (Total T3)": "66.9 ng/dL",
+      "Anti-TPO Antibodies": "19.9 IU/mL"
+    }
+  },
+  {
+    "id": "THY-018",
+    "index": 18,
+    "type": "thyroid",
+    "patientName": "Meera Rao",
+    "age": 54,
+    "uhid": "THY-018",
+    "category": "Thyroid Panel (Overt Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_18.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_18.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "24.96 mIU/L",
+      "Free Thyroxine (FT4)": "0.65 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.62 pg/mL",
+      "Total Thyroxine (Total T4)": "3.4 μg/dL",
+      "Total Triiodothyronine (Total T3)": "61.6 ng/dL",
+      "Anti-TPO Antibodies": "17.2 IU/mL"
+    }
+  },
+  {
+    "id": "THY-019",
+    "index": 19,
+    "type": "thyroid",
+    "patientName": "Varsha Choudhury",
+    "age": 42,
+    "uhid": "THY-019",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_19.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_19.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "5.12 mIU/L",
+      "Free Thyroxine (FT4)": "1.04 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.49 pg/mL",
+      "Anti-TPO Antibodies": "44.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-020",
+    "index": 20,
+    "type": "thyroid",
+    "patientName": "Tejaswini Ghosh",
+    "age": 28,
+    "uhid": "THY-020",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_20.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_20.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "7.68 mIU/L",
+      "Free Thyroxine (FT4)": "1.24 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.17 pg/mL",
+      "Anti-TPO Antibodies": "40.6 IU/mL"
+    }
+  },
+  {
+    "id": "THY-021",
+    "index": 21,
+    "type": "thyroid",
+    "patientName": "Tanvi Deshmukh",
+    "age": 35,
+    "uhid": "THY-021",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_21.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_21.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "9.32 mIU/L",
+      "Free Thyroxine (FT4)": "1.27 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.11 pg/mL",
+      "Anti-TPO Antibodies": "40.7 IU/mL"
+    }
+  },
+  {
+    "id": "THY-022",
+    "index": 22,
+    "type": "thyroid",
+    "patientName": "Keerthi Sen",
+    "age": 35,
+    "uhid": "THY-022",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_22.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_22.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "7.36 mIU/L",
+      "Free Thyroxine (FT4)": "1.32 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.52 pg/mL",
+      "Anti-TPO Antibodies": "16.3 IU/mL"
+    }
+  },
+  {
+    "id": "THY-023",
+    "index": 23,
+    "type": "thyroid",
+    "patientName": "Tejaswini Patel",
+    "age": 52,
+    "uhid": "THY-023",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_23.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_23.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "7.3 mIU/L",
+      "Free Thyroxine (FT4)": "1.16 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.85 pg/mL",
+      "Anti-TPO Antibodies": "20.5 IU/mL"
+    }
+  },
+  {
+    "id": "THY-024",
+    "index": 24,
+    "type": "thyroid",
+    "patientName": "Tanvi Verma",
+    "age": 48,
+    "uhid": "THY-024",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_24.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_24.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "8.63 mIU/L",
+      "Free Thyroxine (FT4)": "1.15 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.04 pg/mL",
+      "Anti-TPO Antibodies": "20.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-025",
+    "index": 25,
+    "type": "thyroid",
+    "patientName": "Neha Sen",
+    "age": 46,
+    "uhid": "THY-025",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_25.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_25.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "6.18 mIU/L",
+      "Free Thyroxine (FT4)": "0.96 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.1 pg/mL",
+      "Anti-TPO Antibodies": "42.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-026",
+    "index": 26,
+    "type": "thyroid",
+    "patientName": "Malini Sharma",
+    "age": 44,
+    "uhid": "THY-026",
+    "category": "Thyroid Panel (Subclinical Hypothyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_26.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_26.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "5.99 mIU/L",
+      "Free Thyroxine (FT4)": "1.23 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.95 pg/mL",
+      "Anti-TPO Antibodies": "23.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-027",
+    "index": 27,
+    "type": "thyroid",
+    "patientName": "Meera Menon",
+    "age": 22,
+    "uhid": "THY-027",
+    "category": "Thyroid Panel (Hashimoto's Autoimmune Thyroiditis)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_27.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_27.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "13.78 mIU/L",
+      "Free Thyroxine (FT4)": "0.79 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.7 pg/mL",
+      "Anti-TPO Antibodies": "604.1 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "158.5 IU/mL"
+    }
+  },
+  {
+    "id": "THY-028",
+    "index": 28,
+    "type": "thyroid",
+    "patientName": "Yamini Shetty",
+    "age": 41,
+    "uhid": "THY-028",
+    "category": "Thyroid Panel (Hashimoto's Autoimmune Thyroiditis)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_28.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_28.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "25.31 mIU/L",
+      "Free Thyroxine (FT4)": "0.51 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.24 pg/mL",
+      "Anti-TPO Antibodies": "374.1 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "85.7 IU/mL"
+    }
+  },
+  {
+    "id": "THY-029",
+    "index": 29,
+    "type": "thyroid",
+    "patientName": "Swathi Dutta",
+    "age": 49,
+    "uhid": "THY-029",
+    "category": "Thyroid Panel (Hashimoto's Autoimmune Thyroiditis)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_29.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_29.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "8.12 mIU/L",
+      "Free Thyroxine (FT4)": "0.59 ng/dL",
+      "Free Triiodothyronine (FT3)": "1.98 pg/mL",
+      "Anti-TPO Antibodies": "561.8 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "329.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-030",
+    "index": 30,
+    "type": "thyroid",
+    "patientName": "Saranya Kulkarni",
+    "age": 44,
+    "uhid": "THY-030",
+    "category": "Thyroid Panel (Hashimoto's Autoimmune Thyroiditis)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_30.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_30.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "18.71 mIU/L",
+      "Free Thyroxine (FT4)": "0.54 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.52 pg/mL",
+      "Anti-TPO Antibodies": "500.6 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "323.8 IU/mL"
+    }
+  },
+  {
+    "id": "THY-031",
+    "index": 31,
+    "type": "thyroid",
+    "patientName": "Vasantha Iyer",
+    "age": 44,
+    "uhid": "THY-031",
+    "category": "Thyroid Panel (Hashimoto's Autoimmune Thyroiditis)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_31.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_31.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "9.04 mIU/L",
+      "Free Thyroxine (FT4)": "0.55 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.29 pg/mL",
+      "Anti-TPO Antibodies": "378.1 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "316.1 IU/mL"
+    }
+  },
+  {
+    "id": "THY-032",
+    "index": 32,
+    "type": "thyroid",
+    "patientName": "Harini Pillai",
+    "age": 31,
+    "uhid": "THY-032",
+    "category": "Thyroid Panel (Hashimoto's Autoimmune Thyroiditis)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_32.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_32.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "18.17 mIU/L",
+      "Free Thyroxine (FT4)": "0.75 ng/dL",
+      "Free Triiodothyronine (FT3)": "2.63 pg/mL",
+      "Anti-TPO Antibodies": "495.5 IU/mL",
+      "Anti-Thyroglobulin (Anti-Tg)": "120.6 IU/mL"
+    }
+  },
+  {
+    "id": "THY-033",
+    "index": 33,
+    "type": "thyroid",
+    "patientName": "Swathi Bhat",
+    "age": 44,
+    "uhid": "THY-033",
+    "category": "Thyroid Panel (Primary Overt Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_33.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_33.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.03 mIU/L",
+      "Free Thyroxine (FT4)": "2.88 ng/dL",
+      "Free Triiodothyronine (FT3)": "9.25 pg/mL",
+      "Total Thyroxine (Total T4)": "14.4 μg/dL",
+      "Total Triiodothyronine (Total T3)": "272.8 ng/dL",
+      "TSH Receptor Antibodies (TRAb)": "3.4 IU/L"
+    }
+  },
+  {
+    "id": "THY-034",
+    "index": 34,
+    "type": "thyroid",
+    "patientName": "Saranya Pillai",
+    "age": 56,
+    "uhid": "THY-034",
+    "category": "Thyroid Panel (Primary Overt Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_34.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_34.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.04 mIU/L",
+      "Free Thyroxine (FT4)": "2.73 ng/dL",
+      "Free Triiodothyronine (FT3)": "6.19 pg/mL",
+      "Total Thyroxine (Total T4)": "18.1 μg/dL",
+      "Total Triiodothyronine (Total T3)": "338.7 ng/dL",
+      "TSH Receptor Antibodies (TRAb)": "3.4 IU/L"
+    }
+  },
+  {
+    "id": "THY-035",
+    "index": 35,
+    "type": "thyroid",
+    "patientName": "Geetha Menon",
+    "age": 58,
+    "uhid": "THY-035",
+    "category": "Thyroid Panel (Primary Overt Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_35.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_35.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.03 mIU/L",
+      "Free Thyroxine (FT4)": "4.01 ng/dL",
+      "Free Triiodothyronine (FT3)": "5.82 pg/mL",
+      "Total Thyroxine (Total T4)": "14 μg/dL",
+      "Total Triiodothyronine (Total T3)": "326.1 ng/dL",
+      "TSH Receptor Antibodies (TRAb)": "3.4 IU/L"
+    }
+  },
+  {
+    "id": "THY-036",
+    "index": 36,
+    "type": "thyroid",
+    "patientName": "Bhavana Sharma",
+    "age": 42,
+    "uhid": "THY-036",
+    "category": "Thyroid Panel (Primary Overt Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_36.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_36.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.03 mIU/L",
+      "Free Thyroxine (FT4)": "4.02 ng/dL",
+      "Free Triiodothyronine (FT3)": "5.74 pg/mL",
+      "Total Thyroxine (Total T4)": "17.7 μg/dL",
+      "Total Triiodothyronine (Total T3)": "258.3 ng/dL",
+      "TSH Receptor Antibodies (TRAb)": "3.4 IU/L"
+    }
+  },
+  {
+    "id": "THY-037",
+    "index": 37,
+    "type": "thyroid",
+    "patientName": "Meera Banerjee",
+    "age": 33,
+    "uhid": "THY-037",
+    "category": "Thyroid Panel (Primary Overt Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_37.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_37.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.04 mIU/L",
+      "Free Thyroxine (FT4)": "3.11 ng/dL",
+      "Free Triiodothyronine (FT3)": "7.48 pg/mL",
+      "Total Thyroxine (Total T4)": "14.9 μg/dL",
+      "Total Triiodothyronine (Total T3)": "358.6 ng/dL",
+      "TSH Receptor Antibodies (TRAb)": "3.4 IU/L"
+    }
+  },
+  {
+    "id": "THY-038",
+    "index": 38,
+    "type": "thyroid",
+    "patientName": "Pooja Iyer",
+    "age": 44,
+    "uhid": "THY-038",
+    "category": "Thyroid Panel (Subclinical Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_38.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_38.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.13 mIU/L",
+      "Free Thyroxine (FT4)": "1.43 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.49 pg/mL"
+    }
+  },
+  {
+    "id": "THY-039",
+    "index": 39,
+    "type": "thyroid",
+    "patientName": "Swathi Shetty",
+    "age": 39,
+    "uhid": "THY-039",
+    "category": "Thyroid Panel (Subclinical Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_39.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_39.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.2 mIU/L",
+      "Free Thyroxine (FT4)": "1.64 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.63 pg/mL"
+    }
+  },
+  {
+    "id": "THY-040",
+    "index": 40,
+    "type": "thyroid",
+    "patientName": "Shreya Reddy",
+    "age": 50,
+    "uhid": "THY-040",
+    "category": "Thyroid Panel (Subclinical Hyperthyroidism)",
+    "imagePathPublic": "/dataset/thyroid/thyroid_report_40.png",
+    "imagePathDataset": "dataset/thyroid/thyroid_report_40.png",
+    "keyLabValues": {
+      "TSH (Ultrasensitive)": "0.19 mIU/L",
+      "Free Thyroxine (FT4)": "1.64 ng/dL",
+      "Free Triiodothyronine (FT3)": "3.15 pg/mL"
+    }
+  },
+  {
+    "id": "PCO-001",
+    "index": 1,
+    "type": "pcos",
+    "patientName": "Nalini Mukherjee",
+    "age": 33,
+    "uhid": "PCO-001",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_01.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_01.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "17.3 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.1 mIU/mL",
+      "LH / FSH Ratio": "3.39 ratio",
+      "Total Testosterone": "85 ng/dL",
+      "Free Testosterone": "3.2 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "502 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "17.2 nmol/L",
+      "Fasting Insulin": "31.6 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "8.05 score"
+    }
+  },
+  {
+    "id": "PCO-002",
+    "index": 2,
+    "type": "pcos",
+    "patientName": "Deepika Iyer",
+    "age": 38,
+    "uhid": "PCO-002",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_02.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_02.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "18.4 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.9 mIU/mL",
+      "LH / FSH Ratio": "3.76 ratio",
+      "Total Testosterone": "96.6 ng/dL",
+      "Free Testosterone": "4.32 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "496.6 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "17.3 nmol/L",
+      "Fasting Insulin": "26.7 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "6.57 score"
+    }
+  },
+  {
+    "id": "PCO-003",
+    "index": 3,
+    "type": "pcos",
+    "patientName": "Shreya Singh",
+    "age": 28,
+    "uhid": "PCO-003",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_03.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_03.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "18.7 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.6 mIU/mL",
+      "LH / FSH Ratio": "3.34 ratio",
+      "Total Testosterone": "82.4 ng/dL",
+      "Free Testosterone": "4.37 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "514.1 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "18 nmol/L",
+      "Fasting Insulin": "23.3 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "5.49 score"
+    }
+  },
+  {
+    "id": "PCO-004",
+    "index": 4,
+    "type": "pcos",
+    "patientName": "Yamini Bhat",
+    "age": 20,
+    "uhid": "PCO-004",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_04.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_04.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "22.6 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.8 mIU/mL",
+      "LH / FSH Ratio": "3.90 ratio",
+      "Total Testosterone": "114.3 ng/dL",
+      "Free Testosterone": "3.61 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "622 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "17 nmol/L",
+      "Fasting Insulin": "34.8 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "8.38 score"
+    }
+  },
+  {
+    "id": "PCO-005",
+    "index": 5,
+    "type": "pcos",
+    "patientName": "Nalini Joshi",
+    "age": 29,
+    "uhid": "PCO-005",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_05.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_05.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "20.1 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.3 mIU/mL",
+      "LH / FSH Ratio": "4.67 ratio",
+      "Total Testosterone": "90 ng/dL",
+      "Free Testosterone": "4.29 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "627.7 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "21.6 nmol/L",
+      "Fasting Insulin": "33.5 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "8.46 score"
+    }
+  },
+  {
+    "id": "PCO-006",
+    "index": 6,
+    "type": "pcos",
+    "patientName": "Sujatha Menon",
+    "age": 34,
+    "uhid": "PCO-006",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_06.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_06.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "15.9 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.3 mIU/mL",
+      "LH / FSH Ratio": "3.00 ratio",
+      "Total Testosterone": "108 ng/dL",
+      "Free Testosterone": "4.07 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "632.7 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "21.9 nmol/L",
+      "Fasting Insulin": "29.4 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "7.27 score"
+    }
+  },
+  {
+    "id": "PCO-007",
+    "index": 7,
+    "type": "pcos",
+    "patientName": "Tanvi Kulkarni",
+    "age": 24,
+    "uhid": "PCO-007",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_07.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_07.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "20.5 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.3 mIU/mL",
+      "LH / FSH Ratio": "4.77 ratio",
+      "Total Testosterone": "77.6 ng/dL",
+      "Free Testosterone": "3.52 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "558.9 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "20.4 nmol/L",
+      "Fasting Insulin": "37.7 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "9.93 score"
+    }
+  },
+  {
+    "id": "PCO-008",
+    "index": 8,
+    "type": "pcos",
+    "patientName": "Pooja Iyer",
+    "age": 23,
+    "uhid": "PCO-008",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_08.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_08.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "22.9 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.8 mIU/mL",
+      "LH / FSH Ratio": "3.95 ratio",
+      "Total Testosterone": "114.7 ng/dL",
+      "Free Testosterone": "3.5 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "522.9 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "14.3 nmol/L",
+      "Fasting Insulin": "24.3 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "5.62 score"
+    }
+  },
+  {
+    "id": "PCO-009",
+    "index": 9,
+    "type": "pcos",
+    "patientName": "Aaradhya Bhat",
+    "age": 20,
+    "uhid": "PCO-009",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_09.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_09.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "18.4 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.2 mIU/mL",
+      "LH / FSH Ratio": "3.54 ratio",
+      "Total Testosterone": "112.4 ng/dL",
+      "Free Testosterone": "3.55 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "586.6 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "21.4 nmol/L",
+      "Fasting Insulin": "27.3 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "6.92 score"
+    }
+  },
+  {
+    "id": "PCO-010",
+    "index": 10,
+    "type": "pcos",
+    "patientName": "Varsha Reddy",
+    "age": 38,
+    "uhid": "PCO-010",
+    "category": "PCOS Comprehensive Panel (Rotterdam Phenotype A)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_10.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_10.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "19.8 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.6 mIU/mL",
+      "LH / FSH Ratio": "4.30 ratio",
+      "Total Testosterone": "111.5 ng/dL",
+      "Free Testosterone": "4.36 pg/mL",
+      "DHEAS (Dehydroepiandrosterone)": "554.3 μg/dL",
+      "SHBG (Sex Hormone Binding Glob.)": "15.6 nmol/L",
+      "Fasting Insulin": "28.7 μIU/mL",
+      "HOMA-IR (Insulin Resistance Index)": "6.70 score"
+    }
+  },
+  {
+    "id": "PCO-011",
+    "index": 11,
+    "type": "pcos",
+    "patientName": "Keerthi Bose",
+    "age": 37,
+    "uhid": "PCO-011",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_11.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_11.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "13.5 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.5 mIU/mL",
+      "LH / FSH Ratio": "2.45 ratio",
+      "Total Testosterone": "81 ng/dL",
+      "Free Testosterone": "2.25 pg/mL",
+      "DHEAS": "415.6 μg/dL",
+      "SHBG": "23.1 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-012",
+    "index": 12,
+    "type": "pcos",
+    "patientName": "Archana Hegde",
+    "age": 20,
+    "uhid": "PCO-012",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_12.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_12.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "15.7 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.5 mIU/mL",
+      "LH / FSH Ratio": "2.85 ratio",
+      "Total Testosterone": "87.8 ng/dL",
+      "Free Testosterone": "2.64 pg/mL",
+      "DHEAS": "394.9 μg/dL",
+      "SHBG": "25.8 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-013",
+    "index": 13,
+    "type": "pcos",
+    "patientName": "Bhoomi Verma",
+    "age": 22,
+    "uhid": "PCO-013",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_13.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_13.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "13.6 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.9 mIU/mL",
+      "LH / FSH Ratio": "2.78 ratio",
+      "Total Testosterone": "82.3 ng/dL",
+      "Free Testosterone": "3.13 pg/mL",
+      "DHEAS": "406.3 μg/dL",
+      "SHBG": "23.9 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-014",
+    "index": 14,
+    "type": "pcos",
+    "patientName": "Divya Reddy",
+    "age": 25,
+    "uhid": "PCO-014",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_14.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_14.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "14.9 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.8 mIU/mL",
+      "LH / FSH Ratio": "3.10 ratio",
+      "Total Testosterone": "79.8 ng/dL",
+      "Free Testosterone": "2.6 pg/mL",
+      "DHEAS": "382.4 μg/dL",
+      "SHBG": "22.2 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-015",
+    "index": 15,
+    "type": "pcos",
+    "patientName": "Meera Reddy",
+    "age": 37,
+    "uhid": "PCO-015",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_15.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_15.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "17 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.7 mIU/mL",
+      "LH / FSH Ratio": "3.62 ratio",
+      "Total Testosterone": "92.7 ng/dL",
+      "Free Testosterone": "3.11 pg/mL",
+      "DHEAS": "388 μg/dL",
+      "SHBG": "22 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-016",
+    "index": 16,
+    "type": "pcos",
+    "patientName": "Vidya Verma",
+    "age": 33,
+    "uhid": "PCO-016",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_16.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_16.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "16 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "6.2 mIU/mL",
+      "LH / FSH Ratio": "2.58 ratio",
+      "Total Testosterone": "77.4 ng/dL",
+      "Free Testosterone": "3.03 pg/mL",
+      "DHEAS": "365.3 μg/dL",
+      "SHBG": "20.7 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-017",
+    "index": 17,
+    "type": "pcos",
+    "patientName": "Geetha Dutta",
+    "age": 36,
+    "uhid": "PCO-017",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_17.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_17.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "13.6 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.7 mIU/mL",
+      "LH / FSH Ratio": "2.89 ratio",
+      "Total Testosterone": "83.8 ng/dL",
+      "Free Testosterone": "2.88 pg/mL",
+      "DHEAS": "415 μg/dL",
+      "SHBG": "27.9 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-018",
+    "index": 18,
+    "type": "pcos",
+    "patientName": "Nalini Shetty",
+    "age": 18,
+    "uhid": "PCO-018",
+    "category": "PCOS Hormonal Panel (Rotterdam Phenotype B)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_18.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_18.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "18.3 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "4.6 mIU/mL",
+      "LH / FSH Ratio": "3.98 ratio",
+      "Total Testosterone": "85.9 ng/dL",
+      "Free Testosterone": "3.26 pg/mL",
+      "DHEAS": "362.6 μg/dL",
+      "SHBG": "21 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-019",
+    "index": 19,
+    "type": "pcos",
+    "patientName": "Gayathri Bhat",
+    "age": 22,
+    "uhid": "PCO-019",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_19.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_19.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "12.8 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.7 mIU/mL",
+      "LH / FSH Ratio": "2.25 ratio",
+      "Total Testosterone": "85.6 ng/dL",
+      "Free Testosterone": "2.43 pg/mL",
+      "DHEAS": "504 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-020",
+    "index": 20,
+    "type": "pcos",
+    "patientName": "Pooja Basu",
+    "age": 38,
+    "uhid": "PCO-020",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_20.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_20.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "12.4 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.7 mIU/mL",
+      "LH / FSH Ratio": "2.18 ratio",
+      "Total Testosterone": "74.6 ng/dL",
+      "Free Testosterone": "2.56 pg/mL",
+      "DHEAS": "392.4 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-021",
+    "index": 21,
+    "type": "pcos",
+    "patientName": "Geetha Das",
+    "age": 29,
+    "uhid": "PCO-021",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_21.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_21.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "10.3 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.9 mIU/mL",
+      "LH / FSH Ratio": "1.75 ratio",
+      "Total Testosterone": "79.5 ng/dL",
+      "Free Testosterone": "2.25 pg/mL",
+      "DHEAS": "491.2 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-022",
+    "index": 22,
+    "type": "pcos",
+    "patientName": "Riya Chatterjee",
+    "age": 25,
+    "uhid": "PCO-022",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_22.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_22.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "9.2 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.4 mIU/mL",
+      "LH / FSH Ratio": "1.70 ratio",
+      "Total Testosterone": "82.3 ng/dL",
+      "Free Testosterone": "3.04 pg/mL",
+      "DHEAS": "452.6 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-023",
+    "index": 23,
+    "type": "pcos",
+    "patientName": "Keerthi Nair",
+    "age": 23,
+    "uhid": "PCO-023",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_23.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_23.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "8.3 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.4 mIU/mL",
+      "LH / FSH Ratio": "1.54 ratio",
+      "Total Testosterone": "79.6 ng/dL",
+      "Free Testosterone": "3.1 pg/mL",
+      "DHEAS": "504.6 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-024",
+    "index": 24,
+    "type": "pcos",
+    "patientName": "Shreya Shetty",
+    "age": 32,
+    "uhid": "PCO-024",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_24.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_24.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "9.3 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.5 mIU/mL",
+      "LH / FSH Ratio": "1.69 ratio",
+      "Total Testosterone": "80.9 ng/dL",
+      "Free Testosterone": "2.93 pg/mL",
+      "DHEAS": "393.2 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-025",
+    "index": 25,
+    "type": "pcos",
+    "patientName": "Harini Hegde",
+    "age": 38,
+    "uhid": "PCO-025",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_25.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_25.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "13.5 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.9 mIU/mL",
+      "LH / FSH Ratio": "2.29 ratio",
+      "Total Testosterone": "73.3 ng/dL",
+      "Free Testosterone": "2.68 pg/mL",
+      "DHEAS": "519.3 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-026",
+    "index": 26,
+    "type": "pcos",
+    "patientName": "Deepika Bose",
+    "age": 22,
+    "uhid": "PCO-026",
+    "category": "PCOS Ovulatory Panel (Rotterdam Phenotype C)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_26.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_26.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "8.6 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.8 mIU/mL",
+      "LH / FSH Ratio": "1.48 ratio",
+      "Total Testosterone": "69.2 ng/dL",
+      "Free Testosterone": "3.08 pg/mL",
+      "DHEAS": "428.3 μg/dL"
+    }
+  },
+  {
+    "id": "PCO-027",
+    "index": 27,
+    "type": "pcos",
+    "patientName": "Rajeshwari Deshmukh",
+    "age": 21,
+    "uhid": "PCO-027",
+    "category": "PCOS Non-Androgenic Panel (Rotterdam Phenotype D)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_27.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_27.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "11.4 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.4 mIU/mL",
+      "LH / FSH Ratio": "2.11 ratio",
+      "Total Testosterone": "47.5 ng/dL",
+      "Free Testosterone": "1.36 pg/mL",
+      "DHEAS": "267.4 μg/dL",
+      "SHBG": "40.6 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-028",
+    "index": 28,
+    "type": "pcos",
+    "patientName": "Harini Patel",
+    "age": 26,
+    "uhid": "PCO-028",
+    "category": "PCOS Non-Androgenic Panel (Rotterdam Phenotype D)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_28.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_28.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "11.1 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5 mIU/mL",
+      "LH / FSH Ratio": "2.22 ratio",
+      "Total Testosterone": "35.2 ng/dL",
+      "Free Testosterone": "1.26 pg/mL",
+      "DHEAS": "171.1 μg/dL",
+      "SHBG": "51.1 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-029",
+    "index": 29,
+    "type": "pcos",
+    "patientName": "Uma Pillai",
+    "age": 20,
+    "uhid": "PCO-029",
+    "category": "PCOS Non-Androgenic Panel (Rotterdam Phenotype D)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_29.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_29.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "13.7 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.6 mIU/mL",
+      "LH / FSH Ratio": "2.45 ratio",
+      "Total Testosterone": "49.4 ng/dL",
+      "Free Testosterone": "0.89 pg/mL",
+      "DHEAS": "249.6 μg/dL",
+      "SHBG": "38.6 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-030",
+    "index": 30,
+    "type": "pcos",
+    "patientName": "Ananya Kulkarni",
+    "age": 32,
+    "uhid": "PCO-030",
+    "category": "PCOS Non-Androgenic Panel (Rotterdam Phenotype D)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_30.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_30.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "15.7 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.5 mIU/mL",
+      "LH / FSH Ratio": "2.85 ratio",
+      "Total Testosterone": "37.7 ng/dL",
+      "Free Testosterone": "0.98 pg/mL",
+      "DHEAS": "215.2 μg/dL",
+      "SHBG": "39 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-031",
+    "index": 31,
+    "type": "pcos",
+    "patientName": "Bhavana Verma",
+    "age": 32,
+    "uhid": "PCO-031",
+    "category": "PCOS Non-Androgenic Panel (Rotterdam Phenotype D)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_31.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_31.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "13.8 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "6.2 mIU/mL",
+      "LH / FSH Ratio": "2.23 ratio",
+      "Total Testosterone": "46 ng/dL",
+      "Free Testosterone": "0.85 pg/mL",
+      "DHEAS": "204.6 μg/dL",
+      "SHBG": "55.8 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-032",
+    "index": 32,
+    "type": "pcos",
+    "patientName": "Chhavi Patel",
+    "age": 26,
+    "uhid": "PCO-032",
+    "category": "PCOS Non-Androgenic Panel (Rotterdam Phenotype D)",
+    "imagePathPublic": "/dataset/pcos/pcos_report_32.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_32.png",
+    "keyLabValues": {
+      "Luteinizing Hormone (LH)": "15.4 mIU/mL",
+      "Follicle Stimulating Hormone (FSH)": "5.7 mIU/mL",
+      "LH / FSH Ratio": "2.70 ratio",
+      "Total Testosterone": "43.6 ng/dL",
+      "Free Testosterone": "0.87 pg/mL",
+      "DHEAS": "243.3 μg/dL",
+      "SHBG": "39 nmol/L"
+    }
+  },
+  {
+    "id": "PCO-033",
+    "index": 33,
+    "type": "pcos",
+    "patientName": "Tejaswini Verma",
+    "age": 26,
+    "uhid": "PCO-033",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_33.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_33.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "4.26 ratio",
+      "Total Testosterone": "94.9 ng/dL",
+      "Fasting Glucose": "115.7 mg/dL",
+      "Fasting Insulin": "32.8 μIU/mL",
+      "HOMA-IR Score": "9.37 score",
+      "HbA1c (Glycated Hemoglobin)": "6.3 %",
+      "Serum Triglycerides": "258.1 mg/dL",
+      "HDL Cholesterol": "34.6 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-034",
+    "index": 34,
+    "type": "pcos",
+    "patientName": "Tejaswini Aggarwal",
+    "age": 23,
+    "uhid": "PCO-034",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_34.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_34.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "3.78 ratio",
+      "Total Testosterone": "97.6 ng/dL",
+      "Fasting Glucose": "120.3 mg/dL",
+      "Fasting Insulin": "44 μIU/mL",
+      "HOMA-IR Score": "13.07 score",
+      "HbA1c (Glycated Hemoglobin)": "6.2 %",
+      "Serum Triglycerides": "203.6 mg/dL",
+      "HDL Cholesterol": "35.3 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-035",
+    "index": 35,
+    "type": "pcos",
+    "patientName": "Bhavana Pillai",
+    "age": 36,
+    "uhid": "PCO-035",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_35.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_35.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "3.96 ratio",
+      "Total Testosterone": "82.6 ng/dL",
+      "Fasting Glucose": "123.8 mg/dL",
+      "Fasting Insulin": "47.9 μIU/mL",
+      "HOMA-IR Score": "14.64 score",
+      "HbA1c (Glycated Hemoglobin)": "6.4 %",
+      "Serum Triglycerides": "198.7 mg/dL",
+      "HDL Cholesterol": "31.4 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-036",
+    "index": 36,
+    "type": "pcos",
+    "patientName": "Kavya Gupta",
+    "age": 36,
+    "uhid": "PCO-036",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_36.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_36.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "3.46 ratio",
+      "Total Testosterone": "83.8 ng/dL",
+      "Fasting Glucose": "118.3 mg/dL",
+      "Fasting Insulin": "46.3 μIU/mL",
+      "HOMA-IR Score": "13.52 score",
+      "HbA1c (Glycated Hemoglobin)": "6.1 %",
+      "Serum Triglycerides": "205.9 mg/dL",
+      "HDL Cholesterol": "35.2 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-037",
+    "index": 37,
+    "type": "pcos",
+    "patientName": "Archana Aggarwal",
+    "age": 38,
+    "uhid": "PCO-037",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_37.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_37.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "3.37 ratio",
+      "Total Testosterone": "76.8 ng/dL",
+      "Fasting Glucose": "107.4 mg/dL",
+      "Fasting Insulin": "46.1 μIU/mL",
+      "HOMA-IR Score": "12.23 score",
+      "HbA1c (Glycated Hemoglobin)": "6.2 %",
+      "Serum Triglycerides": "221.1 mg/dL",
+      "HDL Cholesterol": "30.8 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-038",
+    "index": 38,
+    "type": "pcos",
+    "patientName": "Tanvi Menon",
+    "age": 23,
+    "uhid": "PCO-038",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_38.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_38.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "4.31 ratio",
+      "Total Testosterone": "95.4 ng/dL",
+      "Fasting Glucose": "111.3 mg/dL",
+      "Fasting Insulin": "32.8 μIU/mL",
+      "HOMA-IR Score": "9.01 score",
+      "HbA1c (Glycated Hemoglobin)": "6.2 %",
+      "Serum Triglycerides": "219 mg/dL",
+      "HDL Cholesterol": "34.4 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-039",
+    "index": 39,
+    "type": "pcos",
+    "patientName": "Aishwarya Bhat",
+    "age": 29,
+    "uhid": "PCO-039",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_39.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_39.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "3.02 ratio",
+      "Total Testosterone": "87.7 ng/dL",
+      "Fasting Glucose": "117.5 mg/dL",
+      "Fasting Insulin": "37 μIU/mL",
+      "HOMA-IR Score": "10.73 score",
+      "HbA1c (Glycated Hemoglobin)": "6.4 %",
+      "Serum Triglycerides": "239.8 mg/dL",
+      "HDL Cholesterol": "31.9 mg/dL"
+    }
+  },
+  {
+    "id": "PCO-040",
+    "index": 40,
+    "type": "pcos",
+    "patientName": "Kalyani Hegde",
+    "age": 27,
+    "uhid": "PCO-040",
+    "category": "PCOS & Metabolic Syndrome Panel",
+    "imagePathPublic": "/dataset/pcos/pcos_report_40.png",
+    "imagePathDataset": "dataset/pcos/pcos_report_40.png",
+    "keyLabValues": {
+      "LH / FSH Ratio": "3.92 ratio",
+      "Total Testosterone": "79.1 ng/dL",
+      "Fasting Glucose": "107.5 mg/dL",
+      "Fasting Insulin": "45.9 μIU/mL",
+      "HOMA-IR Score": "12.18 score",
+      "HbA1c (Glycated Hemoglobin)": "6.4 %",
+      "Serum Triglycerides": "265.7 mg/dL",
+      "HDL Cholesterol": "35.8 mg/dL"
+    }
+  }
+]

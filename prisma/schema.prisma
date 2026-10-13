@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Patient {
+  id                    String   @id @default(cuid())
+  name                  String
+  age                   Int
+  gender                String   @default("Female")
+  phoneNumber           String?
+  email                 String?
+  medicalHistory        String?
+  notes                 String?
+
+  // Physical vitals
+  weight                Float?   // kg
+  height                Float?   // cm
+  bmi                   Float?   // auto-calculated
+  bloodPressureSystolic  Int?     // mmHg
+  bloodPressureDiastolic Int?     // mmHg
+  fastingBloodSugar     Float?   // mg/dL
+
+  // Reproductive / PCOS indicators
+  menstrualCycleLength  Int?     // days (28 = normal)
+  menstrualRegularity   String?  // "regular", "irregular", "absent"
+  hairGrowthPattern      String?  // "normal", "mild_hirsutism", "moderate_hirsutism", "severe_hirsutism"
+  skinDarkening          String?  // "none", "mild_acanthosis", "moderate_acanthosis", "severe_acanthosis"
+  follicleCount          Int?     // ovarian follicle count per ovary
+  insulinResistance      String?  // "none", "mild", "moderate", "severe"
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  reports          MedicalReport[]
+  symptoms         SymptomEntry[]
+  screeningResults ScreeningResult[]
+  predictions      Prediction[]
+}
+
+model MedicalReport {
+  id          String   @id @default(cuid())
+  patientId   String
+  reportDate   DateTime @default(now())
+  reportType   String   // "thyroid", "pcos", "general", "lipid", "glucose", "complete"
+  fileName     String?
+  fileType     String?
+  fileData     String?  // Base64 or file reference
+  ocrExtracted String?  // Raw OCR text
+  ocrConfidence Float?  // 0-1 confidence score
+  status      String   @default("pending") // "pending", "processed", "verified", "flagged"
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  patient  Patient    @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  labValues LabValue[]
+}
+
+model LabValue {
+  id            String  @id @default(cuid())
+  reportId      String
+  testName      String
+  result        Float?
+  resultText    String? // For non-numeric results
+  unit          String?
+  referenceLow  Float?
+  referenceHigh Float?
+  referenceText String?
+  isAbnormal    Boolean @default(false)
+  confidence   Float?  // OCR confidence 0-1
+  isVerified    Boolean @default(false)
+  category      String? // "thyroid", "hormone", "metabolic", "lipid", "other"
+  notes         String?
+  createdAt     DateTime @default(now())
+
+  report MedicalReport @relation(fields: [reportId], references: [id], onDelete: Cascade)
+}
+
+model SymptomEntry {
+  id          String   @id @default(cuid())
+  patientId   String
+  symptomName String
+  severity    String   @default("mild") // "mild", "moderate", "severe", "none"
+  dateReported DateTime @default(now())
+  notes       String?
+  category    String?  // "menstrual", "dermatological", "weight", "reproductive", "energy", "other"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  patient Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}
+
+model ScreeningResult {
+  id          String   @id @default(cuid())
+  patientId   String
+  reportId    String?
+  condition   String   // "thyroid", "pcos", "combined"
+  riskLevel   String   // "low", "intermediate", "elevated"
+  riskScore   Float?   // 0-100
+  confidence  Float?   // Model confidence 0-1
+  factors     String   // JSON string of contributing factors
+  summary     String?  // AI-generated summary
+  dataQuality Float?   // Data quality score 0-1
+  missingData String?  // JSON string of missing data fields
+  createdAt   DateTime @default(now())
+
+  patient Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}
+
+model Prediction {
+  id                  String   @id @default(cuid())
+  patientId           String
+  reportId            String?
+
+  // Thyroid prediction
+  thyroidPrediction    String   // "Positive", "Negative"
+  thyroidProbability   Float    // 0.0 - 1.0
+
+  // PCOS prediction
+  pcosPrediction       String   // "Positive", "Negative"
+  pcosProbability      Float    // 0.0 - 1.0
+
+  // ML Model info
+  modelUsed           String   // "DecisionTree", "RandomForest", "SVM", "XGBoost", "Ensemble"
+  modelAccuracy       Float?   // Reported accuracy of the model
+  modelVersion         String?
+
+  // Feature analysis
+  topFeatures          String   // JSON array of top contributing features
+  preprocessingLog     String?  // JSON of preprocessing steps applied
+  dataQualityScore     Float?   // 0-1
+
+  // Report
+  detailedReport       String?  // Full detailed prediction report (markdown)
+  suggestedPrecautions String?  // JSON array of precautions
+
+  createdAt            DateTime @default(now())
+
+  patient Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}

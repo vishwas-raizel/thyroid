@@ -17,6 +17,10 @@
  * - Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5-32.
  * - Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System.
  * - Cortes, C., & Vapnik, V. (1995). Support-vector networks. Machine Learning.
+ * 
+ * Dataset Organization:
+ * - The dataset has been organized into a stratified 80% Training / 20% Testing
+ *   split across all categories (Thyroid, PCOS, Thyroid US, Ovarian US).
  */
 
 // ============================================================================

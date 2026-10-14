@@ -1459,6 +1459,7 @@ function UploadReportView() {
   const [loading, setLoading] = useState(true);
   const [selectedPatientId, setSelectedPatientId] = useState('');
   const [reportType, setReportType] = useState('thyroid_panel');
+  const [modality, setModality] = useState<'thyroid_us' | 'ovarian_us'>('thyroid_us');
   const [reportDate, setReportDate] = useState(new Date().toISOString().split('T')[0]);
   const [notes, setNotes] = useState('');
   const [uploadFile, setUploadFile] = useState<File | null>(null);
@@ -1611,11 +1612,20 @@ function UploadReportView() {
           </div>
           <div className="space-y-2">
             <Label>Report Type</Label>
-            <Select value={reportType} onValueChange={setReportType}>
+            <Select
+              value={reportType}
+              onValueChange={(val) => {
+                setReportType(val);
+                if (val === 'thyroid_ultrasound') setModality('thyroid_us');
+                if (val === 'ovarian_ultrasound') setModality('ovarian_us');
+              }}
+            >
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="thyroid_panel">Thyroid Panel</SelectItem>
-                <SelectItem value="pcos_panel">PCOS Panel</SelectItem>
+                <SelectItem value="thyroid_panel">Thyroid Panel (Blood / Lab)</SelectItem>
+                <SelectItem value="pcos_panel">PCOS Panel (Blood / Lab)</SelectItem>
+                <SelectItem value="thyroid_ultrasound">Thyroid Ultrasound (Thyroid US)</SelectItem>
+                <SelectItem value="ovarian_ultrasound">Ovarian Ultrasound (Ovarian US)</SelectItem>
                 <SelectItem value="complete_blood_count">Complete Blood Count</SelectItem>
                 <SelectItem value="metabolic_panel">Metabolic Panel</SelectItem>
                 <SelectItem value="hormonal_panel">Hormonal Panel</SelectItem>
@@ -1634,33 +1644,77 @@ function UploadReportView() {
         </div>
       </Card>
 
-      {/* File Upload Area */}
-      <Card className="p-4">
-        <h3 className="text-sm font-medium text-gray-700 mb-3">Upload File (Optional)</h3>
+      {/* Image Upload & Preview Card matching user's exact screenshot and workflow */}
+      <Card className="p-5 border-cyan-100 shadow-sm space-y-4">
+        <div className="flex items-center gap-2 text-cyan-800 font-semibold text-base">
+          <Upload className="w-5 h-5 text-cyan-600" />
+          <span>Image Upload &amp; Preview</span>
+        </div>
+
+        <div className="flex items-center gap-3 pt-1">
+          <span className="text-sm font-medium text-gray-700">Modality:</span>
+          <button
+            type="button"
+            onClick={() => {
+              setModality('thyroid_us');
+              setReportType('thyroid_ultrasound');
+            }}
+            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              modality === 'thyroid_us'
+                ? 'bg-teal-600 text-white shadow-sm'
+                : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+            }`}
+          >
+            <Eye className="w-3.5 h-3.5" />
+            Thyroid US
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setModality('ovarian_us');
+              setReportType('ovarian_ultrasound');
+            }}
+            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              modality === 'ovarian_us'
+                ? 'bg-purple-600 text-white shadow-sm'
+                : 'bg-white text-purple-700 border border-purple-200 hover:bg-purple-50'
+            }`}
+          >
+            <Baby className="w-3.5 h-3.5" />
+            Ovarian US
+          </button>
+        </div>
+
+        {/* Upload Box matching screenshot */}
         <div
-          className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors cursor-pointer ${isDragging ? 'border-teal-400 bg-teal-50' : 'border-gray-200 hover:border-gray-300'}`}
+          className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer ${
+            isDragging ? 'border-cyan-500 bg-cyan-50/50' : 'border-cyan-300 hover:border-cyan-400 bg-cyan-50/20'
+          }`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onClick={() => fileInputRef.current?.click()}
         >
-          <input ref={fileInputRef} type="file" className="hidden" accept="image/*,.pdf" onChange={handleFileInput} />
+          <input ref={fileInputRef} type="file" className="hidden" accept="image/*,.pdf,.webp" onChange={handleFileInput} />
           {ocrProcessing ? (
             <div className="flex flex-col items-center gap-2">
-              <RefreshCw className="w-8 h-8 text-teal-500 animate-spin" />
-              <p className="text-sm text-gray-600">Processing with OCR...</p>
+              <RefreshCw className="w-8 h-8 text-cyan-600 animate-spin" />
+              <p className="text-sm text-gray-700 font-medium">Extracting Diagnostic Features &amp; Measurements...</p>
             </div>
           ) : uploadFile ? (
             <div className="flex flex-col items-center gap-2">
-              <FileText className="w-8 h-8 text-teal-500" />
-              <p className="text-sm font-medium text-gray-700">{uploadFile.name}</p>
-              <p className="text-xs text-gray-400">Click to replace</p>
+              <FileText className="w-8 h-8 text-cyan-600" />
+              <p className="text-sm font-medium text-gray-800">{uploadFile.name}</p>
+              <p className="text-xs text-gray-400">Click or drag another image to replace</p>
             </div>
           ) : (
             <div className="flex flex-col items-center gap-2">
-              <Upload className="w-8 h-8 text-gray-400" />
-              <p className="text-sm text-gray-600">Drag & drop a file here, or click to browse</p>
-              <p className="text-xs text-gray-400">Supports images and PDF files</p>
+              <Upload className="w-7 h-7 text-gray-400" />
+              <p className="text-sm font-medium text-gray-700">
+                Upload {modality === 'thyroid_us' ? 'Thyroid' : 'Ovarian'} Ultrasound Image
+              </p>
+              <p className="text-xs text-gray-400">PNG, JPEG, or WebP — max 10MB</p>
+              <p className="text-[11px] text-gray-400 italic mt-1">Click or drag to select</p>
             </div>
           )}
         </div>

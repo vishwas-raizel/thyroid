@@ -1555,5 +1555,828 @@
       "Serum Triglycerides": "265.7 mg/dL",
       "HDL Cholesterol": "35.8 mg/dL"
     }
+  },
+  {
+    "id": "US-THY-001",
+    "index": 1,
+    "type": "thyroid_us",
+    "patientName": "Pooja Bhat",
+    "age": 30,
+    "uhid": "US-THY-001",
+    "category": "Thyroid US - Normal Sonogram",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_01.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_01.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.2 × 1.6 × 1.4 cm",
+      "Right Lobe Volume": "4.9 mL (Normal: 4-8 mL)",
+      "Left Lobe (L × W × AP)": "4.0 × 1.5 × 1.3 cm",
+      "Left Lobe Volume": "4.1 mL (Normal: 4-8 mL)",
+      "Isthmus Thickness": "2.8 mm (Normal < 4 mm)",
+      "Total Thyroid Volume": "9.0 mL (Normal)"
+    },
+    "clinicalImpression": "Normal thyroid ultrasound. Bilateral lobes and isthmus demonstrate normal volume, contour, and homogeneous echotexture."
+  },
+  {
+    "id": "US-THY-002",
+    "index": 2,
+    "type": "thyroid_us",
+    "patientName": "Tanvi Verma",
+    "age": 62,
+    "uhid": "US-THY-002",
+    "category": "Thyroid US - Normal Sonogram",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_02.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_02.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.2 × 1.6 × 1.4 cm",
+      "Right Lobe Volume": "4.9 mL (Normal: 4-8 mL)",
+      "Left Lobe (L × W × AP)": "4.0 × 1.5 × 1.3 cm",
+      "Left Lobe Volume": "4.1 mL (Normal: 4-8 mL)",
+      "Isthmus Thickness": "2.8 mm (Normal < 4 mm)",
+      "Total Thyroid Volume": "9.0 mL (Normal)"
+    },
+    "clinicalImpression": "Normal thyroid ultrasound. Bilateral lobes and isthmus demonstrate normal volume, contour, and homogeneous echotexture."
+  },
+  {
+    "id": "US-THY-003",
+    "index": 3,
+    "type": "thyroid_us",
+    "patientName": "Pooja Rao",
+    "age": 26,
+    "uhid": "US-THY-003",
+    "category": "Thyroid US - Normal Sonogram",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_03.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_03.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.2 × 1.6 × 1.4 cm",
+      "Right Lobe Volume": "4.9 mL (Normal: 4-8 mL)",
+      "Left Lobe (L × W × AP)": "4.0 × 1.5 × 1.3 cm",
+      "Left Lobe Volume": "4.1 mL (Normal: 4-8 mL)",
+      "Isthmus Thickness": "2.8 mm (Normal < 4 mm)",
+      "Total Thyroid Volume": "9.0 mL (Normal)"
+    },
+    "clinicalImpression": "Normal thyroid ultrasound. Bilateral lobes and isthmus demonstrate normal volume, contour, and homogeneous echotexture."
+  },
+  {
+    "id": "US-THY-004",
+    "index": 4,
+    "type": "thyroid_us",
+    "patientName": "Lavanya Kumar",
+    "age": 60,
+    "uhid": "US-THY-004",
+    "category": "Thyroid US - Normal Sonogram",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_04.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_04.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.2 × 1.6 × 1.4 cm",
+      "Right Lobe Volume": "4.9 mL (Normal: 4-8 mL)",
+      "Left Lobe (L × W × AP)": "4.0 × 1.5 × 1.3 cm",
+      "Left Lobe Volume": "4.1 mL (Normal: 4-8 mL)",
+      "Isthmus Thickness": "2.8 mm (Normal < 4 mm)",
+      "Total Thyroid Volume": "9.0 mL (Normal)"
+    },
+    "clinicalImpression": "Normal thyroid ultrasound. Bilateral lobes and isthmus demonstrate normal volume, contour, and homogeneous echotexture."
+  },
+  {
+    "id": "US-THY-005",
+    "index": 5,
+    "type": "thyroid_us",
+    "patientName": "Ananya Sharma",
+    "age": 26,
+    "uhid": "US-THY-005",
+    "category": "Thyroid US - Autoimmune / Hashimoto’s Pattern",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_05.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_05.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.8 × 2.1 × 1.9 cm",
+      "Right Lobe Volume": "8 mL (Mildly enlarged)",
+      "Left Lobe (L × W × AP)": "4.6 × 2.0 × 1.8 cm",
+      "Left Lobe Volume": "10.6 mL (Mildly enlarged)",
+      "Isthmus Thickness": "4.8 mm (Thickened)",
+      "Total Thyroid Volume": "18.6 mL (Enlarged)"
+    },
+    "clinicalImpression": "Findings classic for Chronic Autoimmune (Hashimoto’s) Thyroiditis with diffuse parenchymal heterogeneity and reactive lymphadenopathy."
+  },
+  {
+    "id": "US-THY-006",
+    "index": 6,
+    "type": "thyroid_us",
+    "patientName": "Indira Patel",
+    "age": 50,
+    "uhid": "US-THY-006",
+    "category": "Thyroid US - Autoimmune / Hashimoto’s Pattern",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_06.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_06.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.8 × 2.1 × 1.9 cm",
+      "Right Lobe Volume": "11.1 mL (Mildly enlarged)",
+      "Left Lobe (L × W × AP)": "4.6 × 2.0 × 1.8 cm",
+      "Left Lobe Volume": "8.6 mL (Mildly enlarged)",
+      "Isthmus Thickness": "4.8 mm (Thickened)",
+      "Total Thyroid Volume": "19.7 mL (Enlarged)"
+    },
+    "clinicalImpression": "Findings classic for Chronic Autoimmune (Hashimoto’s) Thyroiditis with diffuse parenchymal heterogeneity and reactive lymphadenopathy."
+  },
+  {
+    "id": "US-THY-007",
+    "index": 7,
+    "type": "thyroid_us",
+    "patientName": "Sneha Shetty",
+    "age": 42,
+    "uhid": "US-THY-007",
+    "category": "Thyroid US - Autoimmune / Hashimoto’s Pattern",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_07.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_07.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.8 × 2.1 × 1.9 cm",
+      "Right Lobe Volume": "10.5 mL (Mildly enlarged)",
+      "Left Lobe (L × W × AP)": "4.6 × 2.0 × 1.8 cm",
+      "Left Lobe Volume": "10.8 mL (Mildly enlarged)",
+      "Isthmus Thickness": "4.8 mm (Thickened)",
+      "Total Thyroid Volume": "21.3 mL (Enlarged)"
+    },
+    "clinicalImpression": "Findings classic for Chronic Autoimmune (Hashimoto’s) Thyroiditis with diffuse parenchymal heterogeneity and reactive lymphadenopathy."
+  },
+  {
+    "id": "US-THY-008",
+    "index": 8,
+    "type": "thyroid_us",
+    "patientName": "Varsha Hegde",
+    "age": 48,
+    "uhid": "US-THY-008",
+    "category": "Thyroid US - Autoimmune / Hashimoto’s Pattern",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_08.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_08.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.8 × 2.1 × 1.9 cm",
+      "Right Lobe Volume": "9.6 mL (Mildly enlarged)",
+      "Left Lobe (L × W × AP)": "4.6 × 2.0 × 1.8 cm",
+      "Left Lobe Volume": "7.8 mL (Mildly enlarged)",
+      "Isthmus Thickness": "4.8 mm (Thickened)",
+      "Total Thyroid Volume": "17.4 mL (Enlarged)"
+    },
+    "clinicalImpression": "Findings classic for Chronic Autoimmune (Hashimoto’s) Thyroiditis with diffuse parenchymal heterogeneity and reactive lymphadenopathy."
+  },
+  {
+    "id": "US-THY-009",
+    "index": 9,
+    "type": "thyroid_us",
+    "patientName": "Lavanya Reddy",
+    "age": 26,
+    "uhid": "US-THY-009",
+    "category": "Thyroid US - Benign Colloid Cystic Nodule",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_09.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_09.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.9 × 2.3 × 1.9 cm",
+      "Right Lobe Volume": "11.2 mL",
+      "Left Lobe (L × W × AP)": "4.1 × 1.6 × 1.4 cm",
+      "Left Lobe Volume": "4.8 mL",
+      "Dominant Nodule Size": "15.5 × 11.8 mm (Right Mid-Lobe)",
+      "Nodule Composition": "Spongiform / Mixed Cystic"
+    },
+    "clinicalImpression": "Benign-appearing spongiform colloid nodule in right thyroid lobe (15.5 × 11.8 mm). Low risk of malignancy (< 2%)."
+  },
+  {
+    "id": "US-THY-010",
+    "index": 10,
+    "type": "thyroid_us",
+    "patientName": "Aditi Bhat",
+    "age": 60,
+    "uhid": "US-THY-010",
+    "category": "Thyroid US - Benign Colloid Cystic Nodule",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_10.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_10.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.9 × 2.3 × 1.9 cm",
+      "Right Lobe Volume": "11.2 mL",
+      "Left Lobe (L × W × AP)": "4.1 × 1.6 × 1.4 cm",
+      "Left Lobe Volume": "4.8 mL",
+      "Dominant Nodule Size": "15.5 × 10 mm (Right Mid-Lobe)",
+      "Nodule Composition": "Spongiform / Mixed Cystic"
+    },
+    "clinicalImpression": "Benign-appearing spongiform colloid nodule in right thyroid lobe (15.5 × 10 mm). Low risk of malignancy (< 2%)."
+  },
+  {
+    "id": "US-THY-011",
+    "index": 11,
+    "type": "thyroid_us",
+    "patientName": "Varsha Bhat",
+    "age": 26,
+    "uhid": "US-THY-011",
+    "category": "Thyroid US - Benign Colloid Cystic Nodule",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_11.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_11.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.9 × 2.3 × 1.9 cm",
+      "Right Lobe Volume": "11.2 mL",
+      "Left Lobe (L × W × AP)": "4.1 × 1.6 × 1.4 cm",
+      "Left Lobe Volume": "4.8 mL",
+      "Dominant Nodule Size": "15 × 11.8 mm (Right Mid-Lobe)",
+      "Nodule Composition": "Spongiform / Mixed Cystic"
+    },
+    "clinicalImpression": "Benign-appearing spongiform colloid nodule in right thyroid lobe (15 × 11.8 mm). Low risk of malignancy (< 2%)."
+  },
+  {
+    "id": "US-THY-012",
+    "index": 12,
+    "type": "thyroid_us",
+    "patientName": "Aditi Gupta",
+    "age": 28,
+    "uhid": "US-THY-012",
+    "category": "Thyroid US - Benign Colloid Cystic Nodule",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_12.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_12.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "4.9 × 2.3 × 1.9 cm",
+      "Right Lobe Volume": "11.2 mL",
+      "Left Lobe (L × W × AP)": "4.1 × 1.6 × 1.4 cm",
+      "Left Lobe Volume": "4.8 mL",
+      "Dominant Nodule Size": "14.7 × 13.8 mm (Right Mid-Lobe)",
+      "Nodule Composition": "Spongiform / Mixed Cystic"
+    },
+    "clinicalImpression": "Benign-appearing spongiform colloid nodule in right thyroid lobe (14.7 × 13.8 mm). Low risk of malignancy (< 2%)."
+  },
+  {
+    "id": "US-THY-013",
+    "index": 13,
+    "type": "thyroid_us",
+    "patientName": "Meera Kumar",
+    "age": 37,
+    "uhid": "US-THY-013",
+    "category": "Thyroid US - Suspicious Solid Nodule (TI-RADS 4)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_13.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_13.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.2 × 2.4 × 2.1 cm",
+      "Right Lobe Volume": "13.6 mL (Enlarged)",
+      "Left Lobe (L × W × AP)": "4.2 × 1.7 × 1.4 cm",
+      "Left Lobe Volume": "5.2 mL",
+      "Suspicious Nodule Size": "20.1 × 15.3 mm (Right Lobe)",
+      "Nodule Features": "Solid, Hypoechoic, Microcalcifications"
+    },
+    "clinicalImpression": "Suspicious solid hypoechoic solitary thyroid nodule (20.1 × 15.3 mm) classified as ACR TI-RADS 4. Estimated malignancy risk: 15–20%."
+  },
+  {
+    "id": "US-THY-014",
+    "index": 14,
+    "type": "thyroid_us",
+    "patientName": "Varsha Menon",
+    "age": 25,
+    "uhid": "US-THY-014",
+    "category": "Thyroid US - Suspicious Solid Nodule (TI-RADS 4)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_14.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_14.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.2 × 2.4 × 2.1 cm",
+      "Right Lobe Volume": "13.6 mL (Enlarged)",
+      "Left Lobe (L × W × AP)": "4.2 × 1.7 × 1.4 cm",
+      "Left Lobe Volume": "5.2 mL",
+      "Suspicious Nodule Size": "22.1 × 16.7 mm (Right Lobe)",
+      "Nodule Features": "Solid, Hypoechoic, Microcalcifications"
+    },
+    "clinicalImpression": "Suspicious solid hypoechoic solitary thyroid nodule (22.1 × 16.7 mm) classified as ACR TI-RADS 4. Estimated malignancy risk: 15–20%."
+  },
+  {
+    "id": "US-THY-015",
+    "index": 15,
+    "type": "thyroid_us",
+    "patientName": "Indira Singh",
+    "age": 25,
+    "uhid": "US-THY-015",
+    "category": "Thyroid US - Suspicious Solid Nodule (TI-RADS 4)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_15.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_15.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.2 × 2.4 × 2.1 cm",
+      "Right Lobe Volume": "13.6 mL (Enlarged)",
+      "Left Lobe (L × W × AP)": "4.2 × 1.7 × 1.4 cm",
+      "Left Lobe Volume": "5.2 mL",
+      "Suspicious Nodule Size": "23.2 × 15 mm (Right Lobe)",
+      "Nodule Features": "Solid, Hypoechoic, Microcalcifications"
+    },
+    "clinicalImpression": "Suspicious solid hypoechoic solitary thyroid nodule (23.2 × 15 mm) classified as ACR TI-RADS 4. Estimated malignancy risk: 15–20%."
+  },
+  {
+    "id": "US-THY-016",
+    "index": 16,
+    "type": "thyroid_us",
+    "patientName": "Bhavana Iyer",
+    "age": 52,
+    "uhid": "US-THY-016",
+    "category": "Thyroid US - Suspicious Solid Nodule (TI-RADS 4)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_16.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_16.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.2 × 2.4 × 2.1 cm",
+      "Right Lobe Volume": "13.6 mL (Enlarged)",
+      "Left Lobe (L × W × AP)": "4.2 × 1.7 × 1.4 cm",
+      "Left Lobe Volume": "5.2 mL",
+      "Suspicious Nodule Size": "20.5 × 13.9 mm (Right Lobe)",
+      "Nodule Features": "Solid, Hypoechoic, Microcalcifications"
+    },
+    "clinicalImpression": "Suspicious solid hypoechoic solitary thyroid nodule (20.5 × 13.9 mm) classified as ACR TI-RADS 4. Estimated malignancy risk: 15–20%."
+  },
+  {
+    "id": "US-THY-017",
+    "index": 17,
+    "type": "thyroid_us",
+    "patientName": "Meera Reddy",
+    "age": 40,
+    "uhid": "US-THY-017",
+    "category": "Thyroid US - Multinodular Goiter (MNG)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_17.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_17.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.8 × 2.8 × 2.6 cm",
+      "Right Lobe Volume": "22.0 mL (Significantly enlarged)",
+      "Left Lobe (L × W × AP)": "5.4 × 2.6 × 2.3 cm",
+      "Left Lobe Volume": "16.8 mL (Enlarged)",
+      "Isthmus Thickness": "5.6 mm (Enlarged)",
+      "Total Thyroid Volume": "38.8 mL (Thyromegaly / Goiter)"
+    },
+    "clinicalImpression": "Multinodular Goiter (MNG) with significant thyromegaly. Dominant right lobe nodule shows benign sonographic characteristics."
+  },
+  {
+    "id": "US-THY-018",
+    "index": 18,
+    "type": "thyroid_us",
+    "patientName": "Pooja Sharma",
+    "age": 48,
+    "uhid": "US-THY-018",
+    "category": "Thyroid US - Multinodular Goiter (MNG)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_18.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_18.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.8 × 2.8 × 2.6 cm",
+      "Right Lobe Volume": "22.0 mL (Significantly enlarged)",
+      "Left Lobe (L × W × AP)": "5.4 × 2.6 × 2.3 cm",
+      "Left Lobe Volume": "16.8 mL (Enlarged)",
+      "Isthmus Thickness": "5.6 mm (Enlarged)",
+      "Total Thyroid Volume": "38.8 mL (Thyromegaly / Goiter)"
+    },
+    "clinicalImpression": "Multinodular Goiter (MNG) with significant thyromegaly. Dominant right lobe nodule shows benign sonographic characteristics."
+  },
+  {
+    "id": "US-THY-019",
+    "index": 19,
+    "type": "thyroid_us",
+    "patientName": "Nandini Shetty",
+    "age": 58,
+    "uhid": "US-THY-019",
+    "category": "Thyroid US - Multinodular Goiter (MNG)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_19.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_19.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.8 × 2.8 × 2.6 cm",
+      "Right Lobe Volume": "22.0 mL (Significantly enlarged)",
+      "Left Lobe (L × W × AP)": "5.4 × 2.6 × 2.3 cm",
+      "Left Lobe Volume": "16.8 mL (Enlarged)",
+      "Isthmus Thickness": "5.6 mm (Enlarged)",
+      "Total Thyroid Volume": "38.8 mL (Thyromegaly / Goiter)"
+    },
+    "clinicalImpression": "Multinodular Goiter (MNG) with significant thyromegaly. Dominant right lobe nodule shows benign sonographic characteristics."
+  },
+  {
+    "id": "US-THY-020",
+    "index": 20,
+    "type": "thyroid_us",
+    "patientName": "Aditi Menon",
+    "age": 41,
+    "uhid": "US-THY-020",
+    "category": "Thyroid US - Multinodular Goiter (MNG)",
+    "imagePathPublic": "/dataset/thyroid_us/thyroid_us_20.png",
+    "imagePathDataset": "dataset/thyroid_us/thyroid_us_20.png",
+    "measurements": {
+      "Right Lobe (L × W × AP)": "5.8 × 2.8 × 2.6 cm",
+      "Right Lobe Volume": "22.0 mL (Significantly enlarged)",
+      "Left Lobe (L × W × AP)": "5.4 × 2.6 × 2.3 cm",
+      "Left Lobe Volume": "16.8 mL (Enlarged)",
+      "Isthmus Thickness": "5.6 mm (Enlarged)",
+      "Total Thyroid Volume": "38.8 mL (Thyromegaly / Goiter)"
+    },
+    "clinicalImpression": "Multinodular Goiter (MNG) with significant thyromegaly. Dominant right lobe nodule shows benign sonographic characteristics."
+  },
+  {
+    "id": "US-OVA-001",
+    "index": 1,
+    "type": "ovarian_us",
+    "patientName": "Sneha Kumar",
+    "age": 36,
+    "uhid": "US-OVA-001",
+    "category": "Ovarian US - Normal Pelvic Sonogram",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_01.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_01.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.2 × 3.8 × 4.4 cm (Anteverted)",
+      "Endometrial Thickness": "7.2 mm (Proliferative phase)",
+      "Right Ovary (L × W × AP)": "3.1 × 2.0 × 1.8 cm",
+      "Right Ovary Volume": "5.8 mL (Normal: < 10 mL)",
+      "Left Ovary (L × W × AP)": "2.9 × 1.9 × 1.7 cm",
+      "Left Ovary Volume": "4.9 mL (Normal: < 10 mL)",
+      "Antral Follicle Count": "Right: 6 | Left: 5 follicles (Normal)"
+    },
+    "clinicalImpression": "Normal pelvic and ovarian ultrasound. Bilateral ovaries demonstrate physiological follicular maturation without polycystic morphology."
+  },
+  {
+    "id": "US-OVA-002",
+    "index": 2,
+    "type": "ovarian_us",
+    "patientName": "Radhika Sharma",
+    "age": 22,
+    "uhid": "US-OVA-002",
+    "category": "Ovarian US - Normal Pelvic Sonogram",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_02.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_02.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.2 × 3.8 × 4.4 cm (Anteverted)",
+      "Endometrial Thickness": "7.2 mm (Proliferative phase)",
+      "Right Ovary (L × W × AP)": "3.1 × 2.0 × 1.8 cm",
+      "Right Ovary Volume": "5.8 mL (Normal: < 10 mL)",
+      "Left Ovary (L × W × AP)": "2.9 × 1.9 × 1.7 cm",
+      "Left Ovary Volume": "4.9 mL (Normal: < 10 mL)",
+      "Antral Follicle Count": "Right: 6 | Left: 5 follicles (Normal)"
+    },
+    "clinicalImpression": "Normal pelvic and ovarian ultrasound. Bilateral ovaries demonstrate physiological follicular maturation without polycystic morphology."
+  },
+  {
+    "id": "US-OVA-003",
+    "index": 3,
+    "type": "ovarian_us",
+    "patientName": "Nandini Joshi",
+    "age": 25,
+    "uhid": "US-OVA-003",
+    "category": "Ovarian US - Normal Pelvic Sonogram",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_03.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_03.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.2 × 3.8 × 4.4 cm (Anteverted)",
+      "Endometrial Thickness": "7.2 mm (Proliferative phase)",
+      "Right Ovary (L × W × AP)": "3.1 × 2.0 × 1.8 cm",
+      "Right Ovary Volume": "5.8 mL (Normal: < 10 mL)",
+      "Left Ovary (L × W × AP)": "2.9 × 1.9 × 1.7 cm",
+      "Left Ovary Volume": "4.9 mL (Normal: < 10 mL)",
+      "Antral Follicle Count": "Right: 6 | Left: 5 follicles (Normal)"
+    },
+    "clinicalImpression": "Normal pelvic and ovarian ultrasound. Bilateral ovaries demonstrate physiological follicular maturation without polycystic morphology."
+  },
+  {
+    "id": "US-OVA-004",
+    "index": 4,
+    "type": "ovarian_us",
+    "patientName": "Neha Kumar",
+    "age": 31,
+    "uhid": "US-OVA-004",
+    "category": "Ovarian US - Normal Pelvic Sonogram",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_04.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_04.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.2 × 3.8 × 4.4 cm (Anteverted)",
+      "Endometrial Thickness": "7.2 mm (Proliferative phase)",
+      "Right Ovary (L × W × AP)": "3.1 × 2.0 × 1.8 cm",
+      "Right Ovary Volume": "5.8 mL (Normal: < 10 mL)",
+      "Left Ovary (L × W × AP)": "2.9 × 1.9 × 1.7 cm",
+      "Left Ovary Volume": "4.9 mL (Normal: < 10 mL)",
+      "Antral Follicle Count": "Right: 6 | Left: 5 follicles (Normal)"
+    },
+    "clinicalImpression": "Normal pelvic and ovarian ultrasound. Bilateral ovaries demonstrate physiological follicular maturation without polycystic morphology."
+  },
+  {
+    "id": "US-OVA-005",
+    "index": 5,
+    "type": "ovarian_us",
+    "patientName": "Sanjana Kulkarni",
+    "age": 30,
+    "uhid": "US-OVA-005",
+    "category": "Ovarian US - Classic Polycystic Ovaries (PCOM)",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_05.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_05.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.8 × 3.4 × 4.0 cm (Anteverted)",
+      "Endometrial Thickness": "8.4 mm",
+      "Right Ovary (L × W × AP)": "4.4 × 3.1 × 2.5 cm",
+      "Right Ovary Volume": "14.3 mL (Significantly enlarged > 10mL)",
+      "Left Ovary (L × W × AP)": "4.1 × 2.9 × 2.4 cm",
+      "Left Ovary Volume": "13.6 mL (Enlarged > 10mL)",
+      "Antral Follicle Count": "Right: 25 | Left: 23 (Markedly elevated)"
+    },
+    "clinicalImpression": "Classic Bilateral Polycystic Ovarian Morphology (PCOM) meeting Rotterdam International Consensus Criteria. Significant bilateral ovarian enlargement (Vol: 14.3 mL / 13.6 mL) and dense stromal hyperplasia."
+  },
+  {
+    "id": "US-OVA-006",
+    "index": 6,
+    "type": "ovarian_us",
+    "patientName": "Janaki Kulkarni",
+    "age": 20,
+    "uhid": "US-OVA-006",
+    "category": "Ovarian US - Classic Polycystic Ovaries (PCOM)",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_06.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_06.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.8 × 3.4 × 4.0 cm (Anteverted)",
+      "Endometrial Thickness": "8.4 mm",
+      "Right Ovary (L × W × AP)": "4.4 × 3.1 × 2.5 cm",
+      "Right Ovary Volume": "15.4 mL (Significantly enlarged > 10mL)",
+      "Left Ovary (L × W × AP)": "4.1 × 2.9 × 2.4 cm",
+      "Left Ovary Volume": "13.6 mL (Enlarged > 10mL)",
+      "Antral Follicle Count": "Right: 28 | Left: 20 (Markedly elevated)"
+    },
+    "clinicalImpression": "Classic Bilateral Polycystic Ovarian Morphology (PCOM) meeting Rotterdam International Consensus Criteria. Significant bilateral ovarian enlargement (Vol: 15.4 mL / 13.6 mL) and dense stromal hyperplasia."
+  },
+  {
+    "id": "US-OVA-007",
+    "index": 7,
+    "type": "ovarian_us",
+    "patientName": "Sanjana Patel",
+    "age": 30,
+    "uhid": "US-OVA-007",
+    "category": "Ovarian US - Classic Polycystic Ovaries (PCOM)",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_07.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_07.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.8 × 3.4 × 4.0 cm (Anteverted)",
+      "Endometrial Thickness": "8.4 mm",
+      "Right Ovary (L × W × AP)": "4.4 × 3.1 × 2.5 cm",
+      "Right Ovary Volume": "14.5 mL (Significantly enlarged > 10mL)",
+      "Left Ovary (L × W × AP)": "4.1 × 2.9 × 2.4 cm",
+      "Left Ovary Volume": "16 mL (Enlarged > 10mL)",
+      "Antral Follicle Count": "Right: 27 | Left: 20 (Markedly elevated)"
+    },
+    "clinicalImpression": "Classic Bilateral Polycystic Ovarian Morphology (PCOM) meeting Rotterdam International Consensus Criteria. Significant bilateral ovarian enlargement (Vol: 14.5 mL / 16 mL) and dense stromal hyperplasia."
+  },
+  {
+    "id": "US-OVA-008",
+    "index": 8,
+    "type": "ovarian_us",
+    "patientName": "Meera Menon",
+    "age": 24,
+    "uhid": "US-OVA-008",
+    "category": "Ovarian US - Classic Polycystic Ovaries (PCOM)",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_08.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_08.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.8 × 3.4 × 4.0 cm (Anteverted)",
+      "Endometrial Thickness": "8.4 mm",
+      "Right Ovary (L × W × AP)": "4.4 × 3.1 × 2.5 cm",
+      "Right Ovary Volume": "14.8 mL (Significantly enlarged > 10mL)",
+      "Left Ovary (L × W × AP)": "4.1 × 2.9 × 2.4 cm",
+      "Left Ovary Volume": "12.6 mL (Enlarged > 10mL)",
+      "Antral Follicle Count": "Right: 28 | Left: 23 (Markedly elevated)"
+    },
+    "clinicalImpression": "Classic Bilateral Polycystic Ovarian Morphology (PCOM) meeting Rotterdam International Consensus Criteria. Significant bilateral ovarian enlargement (Vol: 14.8 mL / 12.6 mL) and dense stromal hyperplasia."
+  },
+  {
+    "id": "US-OVA-009",
+    "index": 9,
+    "type": "ovarian_us",
+    "patientName": "Shreya Shetty",
+    "age": 22,
+    "uhid": "US-OVA-009",
+    "category": "Ovarian US - Classic Polycystic Ovaries (PCOM)",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_09.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_09.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.8 × 3.4 × 4.0 cm (Anteverted)",
+      "Endometrial Thickness": "8.4 mm",
+      "Right Ovary (L × W × AP)": "4.4 × 3.1 × 2.5 cm",
+      "Right Ovary Volume": "17.6 mL (Significantly enlarged > 10mL)",
+      "Left Ovary (L × W × AP)": "4.1 × 2.9 × 2.4 cm",
+      "Left Ovary Volume": "14.9 mL (Enlarged > 10mL)",
+      "Antral Follicle Count": "Right: 24 | Left: 23 (Markedly elevated)"
+    },
+    "clinicalImpression": "Classic Bilateral Polycystic Ovarian Morphology (PCOM) meeting Rotterdam International Consensus Criteria. Significant bilateral ovarian enlargement (Vol: 17.6 mL / 14.9 mL) and dense stromal hyperplasia."
+  },
+  {
+    "id": "US-OVA-010",
+    "index": 10,
+    "type": "ovarian_us",
+    "patientName": "Shreya Shetty",
+    "age": 18,
+    "uhid": "US-OVA-010",
+    "category": "Ovarian US - Classic Polycystic Ovaries (PCOM)",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_10.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_10.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.8 × 3.4 × 4.0 cm (Anteverted)",
+      "Endometrial Thickness": "8.4 mm",
+      "Right Ovary (L × W × AP)": "4.4 × 3.1 × 2.5 cm",
+      "Right Ovary Volume": "13.8 mL (Significantly enlarged > 10mL)",
+      "Left Ovary (L × W × AP)": "4.1 × 2.9 × 2.4 cm",
+      "Left Ovary Volume": "13.1 mL (Enlarged > 10mL)",
+      "Antral Follicle Count": "Right: 25 | Left: 26 (Markedly elevated)"
+    },
+    "clinicalImpression": "Classic Bilateral Polycystic Ovarian Morphology (PCOM) meeting Rotterdam International Consensus Criteria. Significant bilateral ovarian enlargement (Vol: 13.8 mL / 13.1 mL) and dense stromal hyperplasia."
+  },
+  {
+    "id": "US-OVA-011",
+    "index": 11,
+    "type": "ovarian_us",
+    "patientName": "Lavanya Patel",
+    "age": 35,
+    "uhid": "US-OVA-011",
+    "category": "Ovarian US - Moderate Polycystic Morphology",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_11.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_11.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.9 × 3.5 × 4.1 cm",
+      "Endometrial Thickness": "6.5 mm",
+      "Right Ovary (L × W × AP)": "3.8 × 2.6 × 2.2 cm",
+      "Right Ovary Volume": "11.6 mL (Upper limit / Enlarged)",
+      "Left Ovary (L × W × AP)": "3.6 × 2.4 × 2.1 cm",
+      "Left Ovary Volume": "10.1 mL (Borderline)",
+      "Antral Follicle Count": "Right: 14 | Left: 13 follicles"
+    },
+    "clinicalImpression": "Moderate Polycystic Ovarian Morphology (PCOM) on transvaginal sonography. Ovarian volumes and follicular counts align with Rotterdam diagnostic threshold."
+  },
+  {
+    "id": "US-OVA-012",
+    "index": 12,
+    "type": "ovarian_us",
+    "patientName": "Pooja Patel",
+    "age": 26,
+    "uhid": "US-OVA-012",
+    "category": "Ovarian US - Moderate Polycystic Morphology",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_12.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_12.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.9 × 3.5 × 4.1 cm",
+      "Endometrial Thickness": "6.5 mm",
+      "Right Ovary (L × W × AP)": "3.8 × 2.6 × 2.2 cm",
+      "Right Ovary Volume": "12 mL (Upper limit / Enlarged)",
+      "Left Ovary (L × W × AP)": "3.6 × 2.4 × 2.1 cm",
+      "Left Ovary Volume": "10.9 mL (Borderline)",
+      "Antral Follicle Count": "Right: 14 | Left: 15 follicles"
+    },
+    "clinicalImpression": "Moderate Polycystic Ovarian Morphology (PCOM) on transvaginal sonography. Ovarian volumes and follicular counts align with Rotterdam diagnostic threshold."
+  },
+  {
+    "id": "US-OVA-013",
+    "index": 13,
+    "type": "ovarian_us",
+    "patientName": "Neha Deshmukh",
+    "age": 29,
+    "uhid": "US-OVA-013",
+    "category": "Ovarian US - Moderate Polycystic Morphology",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_13.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_13.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.9 × 3.5 × 4.1 cm",
+      "Endometrial Thickness": "6.5 mm",
+      "Right Ovary (L × W × AP)": "3.8 × 2.6 × 2.2 cm",
+      "Right Ovary Volume": "11 mL (Upper limit / Enlarged)",
+      "Left Ovary (L × W × AP)": "3.6 × 2.4 × 2.1 cm",
+      "Left Ovary Volume": "10.6 mL (Borderline)",
+      "Antral Follicle Count": "Right: 14 | Left: 17 follicles"
+    },
+    "clinicalImpression": "Moderate Polycystic Ovarian Morphology (PCOM) on transvaginal sonography. Ovarian volumes and follicular counts align with Rotterdam diagnostic threshold."
+  },
+  {
+    "id": "US-OVA-014",
+    "index": 14,
+    "type": "ovarian_us",
+    "patientName": "Yamini Sharma",
+    "age": 26,
+    "uhid": "US-OVA-014",
+    "category": "Ovarian US - Moderate Polycystic Morphology",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_14.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_14.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "6.9 × 3.5 × 4.1 cm",
+      "Endometrial Thickness": "6.5 mm",
+      "Right Ovary (L × W × AP)": "3.8 × 2.6 × 2.2 cm",
+      "Right Ovary Volume": "11.7 mL (Upper limit / Enlarged)",
+      "Left Ovary (L × W × AP)": "3.6 × 2.4 × 2.1 cm",
+      "Left Ovary Volume": "10.6 mL (Borderline)",
+      "Antral Follicle Count": "Right: 15 | Left: 14 follicles"
+    },
+    "clinicalImpression": "Moderate Polycystic Ovarian Morphology (PCOM) on transvaginal sonography. Ovarian volumes and follicular counts align with Rotterdam diagnostic threshold."
+  },
+  {
+    "id": "US-OVA-015",
+    "index": 15,
+    "type": "ovarian_us",
+    "patientName": "Deepika Hegde",
+    "age": 32,
+    "uhid": "US-OVA-015",
+    "category": "Ovarian US - Asymmetric PCOM with Normal Contralateral Ovary",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_15.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_15.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.0 × 3.6 × 4.2 cm",
+      "Endometrial Thickness": "5.8 mm",
+      "Right Ovary (L × W × AP)": "4.2 × 2.9 × 2.3 cm",
+      "Right Ovary Volume": "14.6 mL (Enlarged > 10 mL)",
+      "Left Ovary (L × W × AP)": "3.0 × 2.1 × 1.8 cm",
+      "Left Ovary Volume": "5.9 mL (Normal size)",
+      "Antral Follicle Count": "Right: 21 follicles (PCOM) | Left: 8 follicles (Normal)"
+    },
+    "clinicalImpression": "Unilateral Right Polycystic Ovarian Morphology. Meets Rotterdam criteria based on single-ovary criterion (>20 follicles, volume >10 mL)."
+  },
+  {
+    "id": "US-OVA-016",
+    "index": 16,
+    "type": "ovarian_us",
+    "patientName": "Pooja Rao",
+    "age": 30,
+    "uhid": "US-OVA-016",
+    "category": "Ovarian US - Asymmetric PCOM with Normal Contralateral Ovary",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_16.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_16.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.0 × 3.6 × 4.2 cm",
+      "Endometrial Thickness": "5.8 mm",
+      "Right Ovary (L × W × AP)": "4.2 × 2.9 × 2.3 cm",
+      "Right Ovary Volume": "14.6 mL (Enlarged > 10 mL)",
+      "Left Ovary (L × W × AP)": "3.0 × 2.1 × 1.8 cm",
+      "Left Ovary Volume": "5.9 mL (Normal size)",
+      "Antral Follicle Count": "Right: 21 follicles (PCOM) | Left: 8 follicles (Normal)"
+    },
+    "clinicalImpression": "Unilateral Right Polycystic Ovarian Morphology. Meets Rotterdam criteria based on single-ovary criterion (>20 follicles, volume >10 mL)."
+  },
+  {
+    "id": "US-OVA-017",
+    "index": 17,
+    "type": "ovarian_us",
+    "patientName": "Sanjana Kulkarni",
+    "age": 31,
+    "uhid": "US-OVA-017",
+    "category": "Ovarian US - Asymmetric PCOM with Normal Contralateral Ovary",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_17.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_17.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.0 × 3.6 × 4.2 cm",
+      "Endometrial Thickness": "5.8 mm",
+      "Right Ovary (L × W × AP)": "4.2 × 2.9 × 2.3 cm",
+      "Right Ovary Volume": "14.6 mL (Enlarged > 10 mL)",
+      "Left Ovary (L × W × AP)": "3.0 × 2.1 × 1.8 cm",
+      "Left Ovary Volume": "5.9 mL (Normal size)",
+      "Antral Follicle Count": "Right: 21 follicles (PCOM) | Left: 8 follicles (Normal)"
+    },
+    "clinicalImpression": "Unilateral Right Polycystic Ovarian Morphology. Meets Rotterdam criteria based on single-ovary criterion (>20 follicles, volume >10 mL)."
+  },
+  {
+    "id": "US-OVA-018",
+    "index": 18,
+    "type": "ovarian_us",
+    "patientName": "Janaki Iyer",
+    "age": 23,
+    "uhid": "US-OVA-018",
+    "category": "Ovarian US - PCOM with Co-existing Dominant / Functional Follicle",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_18.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_18.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.4 × 3.9 × 4.5 cm",
+      "Endometrial Thickness": "9.2 mm (Late proliferative)",
+      "Right Ovary (L × W × AP)": "4.3 × 3.0 × 2.4 cm",
+      "Right Ovary Volume": "16.1 mL (Enlarged)",
+      "Left Ovary (L × W × AP)": "3.9 × 2.7 × 2.2 cm",
+      "Left Ovary Volume": "12.1 mL (Enlarged)",
+      "Dominant Follicle": "19.5 mm in Right Ovary",
+      "Background Follicles": "Right: 18 | Left: 19 peripheral microcysts"
+    },
+    "clinicalImpression": "Polycystic Ovarian Morphology with evidence of spontaneous follicular maturation/ovulation (19.5 mm mature follicle). Corresponds to Ovulatory PCOS (Phenotype C)."
+  },
+  {
+    "id": "US-OVA-019",
+    "index": 19,
+    "type": "ovarian_us",
+    "patientName": "Yamini Bhat",
+    "age": 31,
+    "uhid": "US-OVA-019",
+    "category": "Ovarian US - PCOM with Co-existing Dominant / Functional Follicle",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_19.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_19.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.4 × 3.9 × 4.5 cm",
+      "Endometrial Thickness": "9.2 mm (Late proliferative)",
+      "Right Ovary (L × W × AP)": "4.3 × 3.0 × 2.4 cm",
+      "Right Ovary Volume": "16.1 mL (Enlarged)",
+      "Left Ovary (L × W × AP)": "3.9 × 2.7 × 2.2 cm",
+      "Left Ovary Volume": "12.1 mL (Enlarged)",
+      "Dominant Follicle": "19.5 mm in Right Ovary",
+      "Background Follicles": "Right: 18 | Left: 19 peripheral microcysts"
+    },
+    "clinicalImpression": "Polycystic Ovarian Morphology with evidence of spontaneous follicular maturation/ovulation (19.5 mm mature follicle). Corresponds to Ovulatory PCOS (Phenotype C)."
+  },
+  {
+    "id": "US-OVA-020",
+    "index": 20,
+    "type": "ovarian_us",
+    "patientName": "Bhavana Deshmukh",
+    "age": 35,
+    "uhid": "US-OVA-020",
+    "category": "Ovarian US - PCOM with Co-existing Dominant / Functional Follicle",
+    "imagePathPublic": "/dataset/ovarian_us/ovarian_us_20.png",
+    "imagePathDataset": "dataset/ovarian_us/ovarian_us_20.png",
+    "measurements": {
+      "Uterus (L × AP × W)": "7.4 × 3.9 × 4.5 cm",
+      "Endometrial Thickness": "9.2 mm (Late proliferative)",
+      "Right Ovary (L × W × AP)": "4.3 × 3.0 × 2.4 cm",
+      "Right Ovary Volume": "16.1 mL (Enlarged)",
+      "Left Ovary (L × W × AP)": "3.9 × 2.7 × 2.2 cm",
+      "Left Ovary Volume": "12.1 mL (Enlarged)",
+      "Dominant Follicle": "19.5 mm in Right Ovary",
+      "Background Follicles": "Right: 18 | Left: 19 peripheral microcysts"
+    },
+    "clinicalImpression": "Polycystic Ovarian Morphology with evidence of spontaneous follicular maturation/ovulation (19.5 mm mature follicle). Corresponds to Ovulatory PCOS (Phenotype C)."
   }
 ]

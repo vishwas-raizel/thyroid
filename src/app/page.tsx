@@ -10,7 +10,7 @@ import {
   BarChart3, Zap, GitBranch, Trees, Cpu, Dna, Thermometer, Scale,
   Droplets, Ruler, Baby, ScanLine, ClipboardCheck, ChevronDown,
   ArrowRight, ArrowLeft, RefreshCw, Save, Beaker, Layers, PieChart,
-  Target,
+  Target, ZoomIn, ZoomOut, Maximize2, Sparkles, Scan, Crosshair,
 } from 'lucide-react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
@@ -140,8 +140,9 @@ const NAV_ITEMS: { id: ViewType | 'prediction'; label: string; icon: React.Compo
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'patients', label: 'Patients', icon: Users },
   { id: 'upload-report', label: 'Upload Report', icon: Upload },
+  { id: 'ultrasound', label: 'Imaging Analysis', icon: ScanLine },
   { id: 'screening', label: 'Screening', icon: Shield },
-  { id: 'prediction', label: 'Prediction', icon: ScanLine },
+  { id: 'prediction', label: 'Prediction', icon: Cpu },
   { id: 'trends', label: 'Trends', icon: TrendingUp },
   { id: 'admin', label: 'Admin', icon: Settings },
 ];
@@ -1459,7 +1460,6 @@ function UploadReportView() {
   const [loading, setLoading] = useState(true);
   const [selectedPatientId, setSelectedPatientId] = useState('');
   const [reportType, setReportType] = useState('thyroid_panel');
-  const [modality, setModality] = useState<'thyroid_us' | 'ovarian_us'>('thyroid_us');
   const [reportDate, setReportDate] = useState(new Date().toISOString().split('T')[0]);
   const [notes, setNotes] = useState('');
   const [uploadFile, setUploadFile] = useState<File | null>(null);
@@ -1612,20 +1612,11 @@ function UploadReportView() {
           </div>
           <div className="space-y-2">
             <Label>Report Type</Label>
-            <Select
-              value={reportType}
-              onValueChange={(val) => {
-                setReportType(val);
-                if (val === 'thyroid_ultrasound') setModality('thyroid_us');
-                if (val === 'ovarian_ultrasound') setModality('ovarian_us');
-              }}
-            >
+            <Select value={reportType} onValueChange={setReportType}>
               <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="thyroid_panel">Thyroid Panel (Blood / Lab)</SelectItem>
-                <SelectItem value="pcos_panel">PCOS Panel (Blood / Lab)</SelectItem>
-                <SelectItem value="thyroid_ultrasound">Thyroid Ultrasound (Thyroid US)</SelectItem>
-                <SelectItem value="ovarian_ultrasound">Ovarian Ultrasound (Ovarian US)</SelectItem>
+                <SelectItem value="thyroid_panel">Thyroid Panel</SelectItem>
+                <SelectItem value="pcos_panel">PCOS Panel</SelectItem>
                 <SelectItem value="complete_blood_count">Complete Blood Count</SelectItem>
                 <SelectItem value="metabolic_panel">Metabolic Panel</SelectItem>
                 <SelectItem value="hormonal_panel">Hormonal Panel</SelectItem>
@@ -1644,77 +1635,33 @@ function UploadReportView() {
         </div>
       </Card>
 
-      {/* Image Upload & Preview Card matching user's exact screenshot and workflow */}
-      <Card className="p-5 border-cyan-100 shadow-sm space-y-4">
-        <div className="flex items-center gap-2 text-cyan-800 font-semibold text-base">
-          <Upload className="w-5 h-5 text-cyan-600" />
-          <span>Image Upload &amp; Preview</span>
-        </div>
-
-        <div className="flex items-center gap-3 pt-1">
-          <span className="text-sm font-medium text-gray-700">Modality:</span>
-          <button
-            type="button"
-            onClick={() => {
-              setModality('thyroid_us');
-              setReportType('thyroid_ultrasound');
-            }}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              modality === 'thyroid_us'
-                ? 'bg-teal-600 text-white shadow-sm'
-                : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-            }`}
-          >
-            <Eye className="w-3.5 h-3.5" />
-            Thyroid US
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setModality('ovarian_us');
-              setReportType('ovarian_ultrasound');
-            }}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              modality === 'ovarian_us'
-                ? 'bg-purple-600 text-white shadow-sm'
-                : 'bg-white text-purple-700 border border-purple-200 hover:bg-purple-50'
-            }`}
-          >
-            <Baby className="w-3.5 h-3.5" />
-            Ovarian US
-          </button>
-        </div>
-
-        {/* Upload Box matching screenshot */}
+      {/* File Upload Area */}
+      <Card className="p-4">
+        <h3 className="text-sm font-medium text-gray-700 mb-3">Upload File (Optional)</h3>
         <div
-          className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer ${
-            isDragging ? 'border-cyan-500 bg-cyan-50/50' : 'border-cyan-300 hover:border-cyan-400 bg-cyan-50/20'
-          }`}
+          className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors cursor-pointer ${isDragging ? 'border-teal-400 bg-teal-50' : 'border-gray-200 hover:border-gray-300'}`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onClick={() => fileInputRef.current?.click()}
         >
-          <input ref={fileInputRef} type="file" className="hidden" accept="image/*,.pdf,.webp" onChange={handleFileInput} />
+          <input ref={fileInputRef} type="file" className="hidden" accept="image/*,.pdf" onChange={handleFileInput} />
           {ocrProcessing ? (
             <div className="flex flex-col items-center gap-2">
-              <RefreshCw className="w-8 h-8 text-cyan-600 animate-spin" />
-              <p className="text-sm text-gray-700 font-medium">Extracting Diagnostic Features &amp; Measurements...</p>
+              <RefreshCw className="w-8 h-8 text-teal-500 animate-spin" />
+              <p className="text-sm text-gray-600">Processing with OCR...</p>
             </div>
           ) : uploadFile ? (
             <div className="flex flex-col items-center gap-2">
-              <FileText className="w-8 h-8 text-cyan-600" />
-              <p className="text-sm font-medium text-gray-800">{uploadFile.name}</p>
-              <p className="text-xs text-gray-400">Click or drag another image to replace</p>
+              <FileText className="w-8 h-8 text-teal-500" />
+              <p className="text-sm font-medium text-gray-700">{uploadFile.name}</p>
+              <p className="text-xs text-gray-400">Click to replace</p>
             </div>
           ) : (
             <div className="flex flex-col items-center gap-2">
-              <Upload className="w-7 h-7 text-gray-400" />
-              <p className="text-sm font-medium text-gray-700">
-                Upload {modality === 'thyroid_us' ? 'Thyroid' : 'Ovarian'} Ultrasound Image
-              </p>
-              <p className="text-xs text-gray-400">PNG, JPEG, or WebP — max 10MB</p>
-              <p className="text-[11px] text-gray-400 italic mt-1">Click or drag to select</p>
+              <Upload className="w-8 h-8 text-gray-400" />
+              <p className="text-sm text-gray-600">Drag & drop a file here, or click to browse</p>
+              <p className="text-xs text-gray-400">Supports images and PDF files</p>
             </div>
           )}
         </div>
@@ -1764,6 +1711,871 @@ function UploadReportView() {
           {saving ? <><RefreshCw className="w-4 h-4 mr-1.5 animate-spin" /> Saving...</> : <><Save className="w-4 h-4 mr-1.5" /> Confirm & Save Report</>}
         </Button>
       </div>
+    </div>
+  );
+}
+
+// ============================================================
+// Ultrasound & Imaging Analysis View (Thyroid & Ovarian)
+// ============================================================
+
+interface UltrasoundScanItem {
+  id: string;
+  index: number;
+  type: 'thyroid_us' | 'ovarian_us';
+  patientName: string;
+  age: number;
+  uhid: string;
+  category: string;
+  tirads?: string;
+  rotterdamCriteria?: string;
+  follicleCountRt?: number;
+  follicleCountLt?: number;
+  ovarianVolumeRt?: string;
+  ovarianVolumeLt?: string;
+  stromalEchogenicity?: string;
+  measurements: string;
+  findings: string;
+  imagePathPublic: string;
+  imageInfo: {
+    lobe?: string;
+    depth: string;
+    mode: string;
+    gain: string;
+    freq: string;
+    scanner?: string;
+    probe?: string;
+    leftPanel?: string;
+    rightPanel?: string;
+    hasBoundingBox?: boolean;
+  };
+}
+
+const DEFAULT_THYROID_US_CASES: UltrasoundScanItem[] = [
+  {
+    id: 'THY-US-001', index: 1, type: 'thyroid_us', patientName: 'Priya Sharma', age: 34,
+    uhid: 'THY-US-001', category: 'Solitary Hypoechoic Nodule (Right Lobe)', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: '9.2 × 6.8 mm',
+    findings: 'Well-circumscribed solitary hypoechoic nodule in the mid right lobe. Regular margins, wider-than-tall orientation.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_01.png',
+    imageInfo: { lobe: 'Right Lobe', depth: '4 cm', mode: 'B-mode', gain: '72 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-002', index: 2, type: 'thyroid_us', patientName: 'Ananya Deshmukh', age: 29,
+    uhid: 'THY-US-002', category: 'Colloid Nodule with Comet-Tail Artifact (Left Lobe)', tirads: 'TI-RADS 2 (Benign)',
+    measurements: '8.5 × 6.1 mm',
+    findings: 'Predominantly cystic nodule with internal echogenic foci exhibiting reverberation / comet-tail artifact in the left lobe.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_02.png',
+    imageInfo: { lobe: 'Left Lobe', depth: '4 cm', mode: 'B-mode', gain: '74 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-003', index: 3, type: 'thyroid_us', patientName: 'Kavya Reddy', age: 46,
+    uhid: 'THY-US-003', category: 'Multinodular Goiter (Bilateral Nodules)', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: 'Rt: 12.4 mm, Lt: 10.8 mm',
+    findings: 'Enlarged thyroid gland with multiple discrete rounded nodules scattered throughout both right and left lobes.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_03.png',
+    imageInfo: { lobe: 'Bilateral', depth: '5 cm', mode: 'B-mode', gain: '71 dB', freq: '10 MHz' }
+  },
+  {
+    id: 'THY-US-004', index: 4, type: 'thyroid_us', patientName: 'Meera Kulkarni', age: 38,
+    uhid: 'THY-US-004', category: "Hashimoto's Autoimmune Thyroiditis", tirads: 'Diffuse Disease (Non-Focal)',
+    measurements: 'Diffuse enlargement, no dominant nodule',
+    findings: 'Diffuse coarse heterogeneous parenchymal echotexture with hypoechoic micronodulation and echogenic fibrous septa.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_04.png',
+    imageInfo: { lobe: 'Bilateral Diffuse', depth: '4 cm', mode: 'B-mode', gain: '73 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-005', index: 5, type: 'thyroid_us', patientName: 'Sanjana Nair', age: 25,
+    uhid: 'THY-US-005', category: 'Normal Thyroid Ultrasound (Homogeneous Parenchyma)', tirads: 'TI-RADS 1 (Normal)',
+    measurements: 'Rt: 4.1×1.5×1.4 cm, Lt: 3.9×1.4×1.3 cm',
+    findings: 'Normal thyroid gland morphology. Homogeneous fine ground-glass echogenicity, smooth thin margins, normal vascularity.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_05.png',
+    imageInfo: { lobe: 'Bilateral Normal', depth: '4 cm', mode: 'B-mode', gain: '70 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-006', index: 6, type: 'thyroid_us', patientName: 'Deepika Patel', age: 41,
+    uhid: 'THY-US-006', category: 'Subacute Granulomatous Thyroiditis (De Quervain)', tirads: 'Inflammatory (Atypical)',
+    measurements: 'Geographic area ~ 14 × 9 mm',
+    findings: 'Ill-defined patchy hypoechoic non-mass geographic area in the mid-to-lower pole with reduced vascular flow on Doppler.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_06.png',
+    imageInfo: { lobe: 'Right Lobe', depth: '4 cm', mode: 'B-mode', gain: '70 dB', freq: '11 MHz' }
+  },
+  {
+    id: 'THY-US-007', index: 7, type: 'thyroid_us', patientName: 'Divya Iyer', age: 37,
+    uhid: 'THY-US-007', category: 'Hypoechoic Nodule with Microcalcifications (Left Lobe)', tirads: 'TI-RADS 4 (Moderately Suspicious)',
+    measurements: '11.4 × 8.2 mm',
+    findings: 'Solid hypoechoic nodule in the left lobe exhibiting punctate hyperechoic microcalcifications without acoustic shadowing.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_07.png',
+    imageInfo: { lobe: 'Left Lobe', depth: '4 cm', mode: 'B-mode', gain: '75 dB', freq: '13 MHz' }
+  },
+  {
+    id: 'THY-US-008', index: 8, type: 'thyroid_us', patientName: 'Sneha Menon', age: 31,
+    uhid: 'THY-US-008', category: 'Spongiform Benign Nodule (Right Lobe)', tirads: 'TI-RADS 2 (Benign)',
+    measurements: '13.5 × 11.2 mm',
+    findings: 'Classic spongiform microcystic nodule occupying >50% of the volume. Characteristic honeycomb appearance, completely benign.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_08.png',
+    imageInfo: { lobe: 'Right Lobe', depth: '4.5 cm', mode: 'B-mode', gain: '72 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-009', index: 9, type: 'thyroid_us', patientName: 'Varsha Joshi', age: 49,
+    uhid: 'THY-US-009', category: 'Mixed Cystic-Solid Nodule (Isthmus)', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: '7.3 × 5.0 mm',
+    findings: 'Well-defined oval mixed composition nodule in the thyroid isthmus, predominantly solid with internal cystic spaces.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_09.png',
+    imageInfo: { lobe: 'Isthmus', depth: '3.5 cm', mode: 'B-mode', gain: '69 dB', freq: '14 MHz' }
+  },
+  {
+    id: 'THY-US-010', index: 10, type: 'thyroid_us', patientName: 'Shreya Bhat', age: 52,
+    uhid: 'THY-US-010', category: 'Taller-than-Wide Hypoechoic Nodule (Left Lobe)', tirads: 'TI-RADS 5 (Highly Suspicious)',
+    measurements: '10.5 × 12.8 mm',
+    findings: 'Solid markedly hypoechoic nodule, taller-than-wide in transverse plane, with lobulated irregular margins. FNA recommended.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_10.png',
+    imageInfo: { lobe: 'Left Lobe', depth: '4 cm', mode: 'B-mode', gain: '76 dB', freq: '13 MHz' }
+  },
+  {
+    id: 'THY-US-011', index: 11, type: 'thyroid_us', patientName: 'Pooja Hegde', age: 33,
+    uhid: 'THY-US-011', category: "Graves' Disease (Diffuse Hyperplasia)", tirads: 'Diffuse Autoimmune',
+    measurements: 'Symmetric enlargement (volume > 26 mL)',
+    findings: 'Marked diffuse thyroid parenchymal hypertrophy with convex lobar margins and diffuse hypoechogenicity ("thyroid inferno").',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_11.png',
+    imageInfo: { lobe: 'Bilateral Diffuse', depth: '4.5 cm', mode: 'B-mode', gain: '72 dB', freq: '11 MHz' }
+  },
+  {
+    id: 'THY-US-012', index: 12, type: 'thyroid_us', patientName: 'Radhika Rao', age: 44,
+    uhid: 'THY-US-012', category: 'Partially Cystic Nodule with Internal Debris (Right Lobe)', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: '14.0 × 9.5 mm',
+    findings: 'Complex nodule with anechoic fluid component and eccentric avascular solid tissue. No microcalcifications.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_12.png',
+    imageInfo: { lobe: 'Right Lobe', depth: '4 cm', mode: 'B-mode', gain: '71 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-013', index: 13, type: 'thyroid_us', patientName: 'Tanvi Verma', age: 28,
+    uhid: 'THY-US-013', category: 'Isoechoic Adenoma with Complete Peripheral Halo (Left Lobe)', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: '12.8 × 10.1 mm',
+    findings: 'Homogeneous isoechoic follicular adenoma surrounded by a continuous uniform hypoechoic fibrous rim/halo.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_13.png',
+    imageInfo: { lobe: 'Left Lobe', depth: '4 cm', mode: 'B-mode', gain: '73 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-014', index: 14, type: 'thyroid_us', patientName: 'Aishwarya Singh', age: 47,
+    uhid: 'THY-US-014', category: 'Bilateral Colloid Nodules with Punctate Foci', tirads: 'TI-RADS 2 (Benign)',
+    measurements: 'Rt: 6.2 mm, Lt: 5.5 mm',
+    findings: 'Multiple small bilateral colloid cysts with comet-tail artifacts. Preserved parenchymal background.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_14.png',
+    imageInfo: { lobe: 'Bilateral', depth: '4.5 cm', mode: 'B-mode', gain: '70 dB', freq: '11 MHz' }
+  },
+  {
+    id: 'THY-US-015', index: 15, type: 'thyroid_us', patientName: 'Gayathri Gupta', age: 36,
+    uhid: 'THY-US-015', category: 'Simple Anechoic Cyst (Right Lobe)', tirads: 'TI-RADS 2 (Benign)',
+    measurements: '9.8 × 8.4 mm',
+    findings: 'Purely anechoic, thin-walled, round fluid-filled simple thyroid cyst with posterior acoustic enhancement.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_15.png',
+    imageInfo: { lobe: 'Right Lobe', depth: '3.5 cm', mode: 'B-mode', gain: '68 dB', freq: '13 MHz' }
+  },
+  {
+    id: 'THY-US-016', index: 16, type: 'thyroid_us', patientName: 'Harini Aggarwal', age: 55,
+    uhid: 'THY-US-016', category: 'Nodule with Dense Macrocalcification & Shadowing (Left Lobe)', tirads: 'TI-RADS 4 (Moderately Suspicious)',
+    measurements: 'Calcification ~ 4.2 mm, Nodule ~ 12.0 mm',
+    findings: 'Coarse dense macrocalcification located in the posterior margin of the left lobe with prominent posterior acoustic shadow.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_16.png',
+    imageInfo: { lobe: 'Left Lobe', depth: '4.5 cm', mode: 'B-mode', gain: '74 dB', freq: '11 MHz' }
+  },
+  {
+    id: 'THY-US-017', index: 17, type: 'thyroid_us', patientName: 'Keerthi Mishra', age: 59,
+    uhid: 'THY-US-017', category: 'Atrophic Thyroiditis (End-Stage Hypothyroidism)', tirads: 'Atrophic / Fibrotic',
+    measurements: 'Rt AP: 0.7 cm, Lt AP: 0.6 cm',
+    findings: 'Markedly small, shrunken thyroid lobes with coarse hyperechoic fibrotic bands replacing normal parenchyma.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_17.png',
+    imageInfo: { lobe: 'Bilateral Shrunken', depth: '3.5 cm', mode: 'B-mode', gain: '75 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-018', index: 18, type: 'thyroid_us', patientName: 'Lavanya Chatterjee', age: 43,
+    uhid: 'THY-US-018', category: 'Dominant Nodule with Mild Tracheal Impression (Right Lobe)', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: '18.2 × 13.5 mm',
+    findings: 'Large well-defined oval isoechoic-to-hypoechoic nodule in the right lobe with mild contour protrusion toward tracheal fascia.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_18.png',
+    imageInfo: { lobe: 'Right Lobe', depth: '5 cm', mode: 'B-mode', gain: '71 dB', freq: '10 MHz' }
+  },
+  {
+    id: 'THY-US-019', index: 19, type: 'thyroid_us', patientName: 'Malini Banerjee', age: 32,
+    uhid: 'THY-US-019', category: 'Bilateral Subcentimeter Micronodules', tirads: 'TI-RADS 3 (Mildly Suspicious)',
+    measurements: 'Largest 5.4 mm (Rt lower pole)',
+    findings: 'Several tiny non-palpable subcentimeter hypoechoic micronodules (4–6 mm) scattered in both lobes with sharp margins.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_19.png',
+    imageInfo: { lobe: 'Bilateral', depth: '4 cm', mode: 'B-mode', gain: '72 dB', freq: '12 MHz' }
+  },
+  {
+    id: 'THY-US-020', index: 20, type: 'thyroid_us', patientName: 'Nandini Dutta', age: 24,
+    uhid: 'THY-US-020', category: 'Normal Young Adult Thyroid Baseline', tirads: 'TI-RADS 1 (Normal)',
+    measurements: 'Rt: 3.8×1.3×1.2 cm, Lt: 3.7×1.3×1.1 cm',
+    findings: 'Symmetric, completely normal thyroid lobes and isthmus with pristine fine speckle echogenicity and smooth capsular boundaries.',
+    imagePathPublic: '/dataset/thyroid_us/thyroid_us_20.png',
+    imageInfo: { lobe: 'Bilateral Normal', depth: '4 cm', mode: 'B-mode', gain: '70 dB', freq: '13 MHz' }
+  }
+];
+
+const DEFAULT_OVARIAN_US_CASES: UltrasoundScanItem[] = [
+  {
+    id: 'PCOS-US-001', index: 1, type: 'ovarian_us', patientName: 'Ananya Deshmukh', age: 26, uhid: 'PCOS-US-001',
+    category: 'Classic Rotterdam PCOM (Bilateral String-of-Pearls)', rotterdamCriteria: 'Rotterdam PCOM Positive (FNPO > 12)',
+    follicleCountRt: 16, follicleCountLt: 18, ovarianVolumeRt: '11.8 mL', ovarianVolumeLt: '12.2 mL',
+    stromalEchogenicity: 'Increased Central Hyperechogenicity',
+    measurements: 'Rt: 38×24×23 mm (11.8 mL) | Lt: 39×25×24 mm (12.2 mL)',
+    findings: 'Bilateral enlarged ovaries displaying classic peripheral arrangement of >15 subcentimeter anechoic follicles (2-8 mm) encircling an expanded echogenic central stroma.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_01.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '84 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-002', index: 2, type: 'ovarian_us', patientName: 'Priya Sharma', age: 28, uhid: 'PCOS-US-002',
+    category: 'Dominant Ovulatory Follicle with Contralateral PCOM', rotterdamCriteria: 'Rotterdam PCOM Positive (Unilateral Persistence)',
+    follicleCountRt: 14, follicleCountLt: 8, ovarianVolumeRt: '10.9 mL', ovarianVolumeLt: '12.8 mL',
+    stromalEchogenicity: 'Mildly Increased Central Stroma',
+    measurements: 'Rt: 36×23×22 mm (10.9 mL) | Lt Follicle: 19.2 mm (Total Vol: 12.8 mL)',
+    findings: 'Left ovary demonstrates a solitary leading dominant Graafian follicle measuring 19.2 mm. Right ovary preserves classic multi-follicular peripheral ring pattern of polycystic morphology.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_02.png',
+    imageInfo: { scanner: 'PHILIPS EPIQ 7G', probe: 'C10-3v ENDOVAGINAL', freq: '8.0 MHz', depth: '8 cm', gain: '82 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-003', index: 3, type: 'ovarian_us', patientName: 'Sneha Reddy', age: 24, uhid: 'PCOS-US-003',
+    category: 'Severe Polycystic Morphology with High Stromal Volume', rotterdamCriteria: 'Rotterdam PCOM Positive (Severe Phenotype)',
+    follicleCountRt: 19, follicleCountLt: 21, ovarianVolumeRt: '13.5 mL', ovarianVolumeLt: '14.1 mL',
+    stromalEchogenicity: 'Marked Hyperechoic Stromal Hyperplasia',
+    measurements: 'Rt: 41×26×24 mm (13.5 mL) | Lt: 42×27×25 mm (14.1 mL)',
+    findings: 'Bilateral globular ovarian enlargement exceeding 13 mL with dense stromal core and over 18 peripheral follicles arrested at 2-6 mm. Stromal area exceeds 40% of ovarian cross-section.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_03.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '86 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-004', index: 4, type: 'ovarian_us', patientName: 'Kavya Nair', age: 31, uhid: 'PCOS-US-004',
+    category: 'Asymmetric Polycystic Morphology (Right Predominant)', rotterdamCriteria: 'Rotterdam PCOM Positive (Asymmetric)',
+    follicleCountRt: 16, follicleCountLt: 9, ovarianVolumeRt: '12.4 mL', ovarianVolumeLt: '8.6 mL',
+    stromalEchogenicity: 'Asymmetric (Right > Left)',
+    measurements: 'Rt: 39×25×23 mm (12.4 mL) | Lt: 32×21×19 mm (8.6 mL)',
+    findings: 'Marked asymmetry between ovaries. Right ovary exhibits prominent polycystic phenotype with 16 peripheral microcysts, while left ovary displays normal stromal architecture with 9 antral follicles.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_04.png',
+    imageInfo: { scanner: 'CANON APLIO i800', probe: 'PVT-781VT TRANSVAGINAL', freq: '8.5 MHz', depth: '8 cm', gain: '80 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-005', index: 5, type: 'ovarian_us', patientName: 'Meera Patel', age: 22, uhid: 'PCOS-US-005',
+    category: 'Adolescent PCOS Phenotype (Enlarged Globular Ovaries)', rotterdamCriteria: 'Rotterdam PCOM Positive (Adolescent)',
+    follicleCountRt: 22, follicleCountLt: 20, ovarianVolumeRt: '14.2 mL', ovarianVolumeLt: '13.9 mL',
+    stromalEchogenicity: 'Dense Central Core',
+    measurements: 'Rt: 42×28×23 mm (14.2 mL) | Lt: 41×27×24 mm (13.9 mL)',
+    findings: 'Substantial bilateral ovarian enlargement (>13 mL) with prominent subcapsular ring of arrested antral follicles (>20 per plane). Typical presentation of adolescent hyperandrogenic anovulation.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_05.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '85 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-006', index: 6, type: 'ovarian_us', patientName: 'Divya Iyer', age: 29, uhid: 'PCOS-US-006',
+    category: 'Normal Physiological Baseline Ovaries (Control)', rotterdamCriteria: 'Rotterdam PCOM Negative (Normal)',
+    follicleCountRt: 6, follicleCountLt: 5, ovarianVolumeRt: '6.2 mL', ovarianVolumeLt: '5.8 mL',
+    stromalEchogenicity: 'Normal Homogeneous Stroma',
+    measurements: 'Rt: 30×19×17 mm (6.2 mL) | Lt: 29×18×16 mm (5.8 mL)',
+    findings: 'Completely normal pelvic ultrasound. Normal ovarian volumes (<7 mL), smooth capsular contours, 5-6 normal antral follicles per ovary, normal central stromal echogenicity.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_06.png',
+    imageInfo: { scanner: 'PHILIPS EPIQ 7G', probe: 'C10-3v ENDOVAGINAL', freq: '8.0 MHz', depth: '8 cm', gain: '78 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-007', index: 7, type: 'ovarian_us', patientName: 'Radhika Rao', age: 33, uhid: 'PCOS-US-007',
+    category: 'Polycystic Ovary with Central & Peripheral Follicular Distribution', rotterdamCriteria: 'Rotterdam PCOM Positive (Dispersed Pattern)',
+    follicleCountRt: 15, follicleCountLt: 16, ovarianVolumeRt: '11.5 mL', ovarianVolumeLt: '11.9 mL',
+    stromalEchogenicity: 'Stromal-to-Total Area Ratio > 0.35',
+    measurements: 'Rt: 37×24×22 mm (11.5 mL) | Lt: 38×24×23 mm (11.9 mL)',
+    findings: 'Follicles distributed both along the peripheral cortex and interspersed through the deep ovarian stroma. Both ovarian volumes exceed the 10 mL diagnostic threshold.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_07.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '83 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-008', index: 8, type: 'ovarian_us', patientName: 'Pooja Hegde', age: 27, uhid: 'PCOS-US-008',
+    category: 'Bilateral Follicular Arrest with Thickened Tunica Albuginea', rotterdamCriteria: 'Rotterdam PCOM Positive',
+    follicleCountRt: 14, follicleCountLt: 15, ovarianVolumeRt: '12.1 mL', ovarianVolumeLt: '12.5 mL',
+    stromalEchogenicity: 'Thickened Echogenic Outer Capsule',
+    measurements: 'Rt: 38×25×23 mm (12.1 mL) | Lt: 39×25×24 mm (12.5 mL)',
+    findings: 'Prominent echogenic capsule surrounding both ovaries with complete follicular growth arrest below 7 mm. Typical features of chronic anovulation.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_08.png',
+    imageInfo: { scanner: 'CANON APLIO i800', probe: 'PVT-781VT TRANSVAGINAL', freq: '8.5 MHz', depth: '8 cm', gain: '82 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-009', index: 9, type: 'ovarian_us', patientName: 'Tanvi Verma', age: 25, uhid: 'PCOS-US-009',
+    category: 'Dominant Right Ovarian Follicle (Late Follicular Phase)', rotterdamCriteria: 'Rotterdam PCOM Borderline (Single Dominant)',
+    follicleCountRt: 7, follicleCountLt: 12, ovarianVolumeRt: '12.6 mL', ovarianVolumeLt: '10.2 mL',
+    stromalEchogenicity: 'Moderate Stromal Density',
+    measurements: 'Rt Follicle: 18.8 mm (Vol: 12.6 mL) | Lt: 35×23×21 mm (10.2 mL)',
+    findings: 'Right ovary shows an 18.8 mm mature follicle with thin regular margins. Left ovary maintains multiple 3-6 mm follicles with increased central stroma.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_09.png',
+    imageInfo: { scanner: 'PHILIPS EPIQ 7G', probe: 'C10-3v ENDOVAGINAL', freq: '8.0 MHz', depth: '8 cm', gain: '81 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-010', index: 10, type: 'ovarian_us', patientName: 'Harini Aggarwal', age: 30, uhid: 'PCOS-US-010',
+    category: 'Resolving Corpus Luteum with Contralateral PCOM', rotterdamCriteria: 'Rotterdam PCOM Positive (Luteal Phase)',
+    follicleCountRt: 15, follicleCountLt: 8, ovarianVolumeRt: '11.2 mL', ovarianVolumeLt: '13.6 mL',
+    stromalEchogenicity: 'Hypervascular Stroma',
+    measurements: 'Rt: 37×24×22 mm (11.2 mL) | Lt Corpus Luteum: 18.5 mm (Vol: 13.6 mL)',
+    findings: 'Thick-walled cystic corpus luteum measuring 18.5 mm observed in left ovary with peripheral ring-of-fire vascularity. Right ovary exhibits textbook polycystic string-of-pearls.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_10.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '84 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-011', index: 11, type: 'ovarian_us', patientName: 'Malini Banerjee', age: 23, uhid: 'PCOS-US-011',
+    category: 'Monofollicular Emergence in Polycystic Ovary', rotterdamCriteria: 'Rotterdam PCOM Positive (Ovulatory Emergence)',
+    follicleCountRt: 13, follicleCountLt: 9, ovarianVolumeRt: '10.6 mL', ovarianVolumeLt: '12.1 mL',
+    stromalEchogenicity: 'Increased Central Core',
+    measurements: 'Rt: 36×23×22 mm (10.6 mL) | Lt Follicle: 16.8 mm (Vol: 12.1 mL)',
+    findings: 'Early dominant follicle measuring 16.8 mm emerging in left ovary against background of bilateral stromal volume expansion (>10 mL).',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_11.png',
+    imageInfo: { scanner: 'SIEMENS ACUSON SEQUOIA', probe: '9EV3 ENDOVAGINAL', freq: '7.5 MHz', depth: '8 cm', gain: '83 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-012', index: 12, type: 'ovarian_us', patientName: 'Gayathri Gupta', age: 32, uhid: 'PCOS-US-012',
+    category: 'Insulin-Resistant PCOS Phenotype with Stromal Hyperplasia', rotterdamCriteria: 'Rotterdam PCOM Positive (Metabolic Variant)',
+    follicleCountRt: 18, follicleCountLt: 19, ovarianVolumeRt: '14.8 mL', ovarianVolumeLt: '15.2 mL',
+    stromalEchogenicity: 'Marked Hyperechogenicity, S/A > 0.42',
+    measurements: 'Rt: 43×29×25 mm (14.8 mL) | Lt: 44×30×26 mm (15.2 mL)',
+    findings: 'Extensive bilateral ovarian enlargement approaching 15 mL each. Hypertrophied echogenic central stroma compressing small 2-5 mm follicles outward against capsule.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_12.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '87 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-013', index: 13, type: 'ovarian_us', patientName: 'Shreya Joshi', age: 28, uhid: 'PCOS-US-013',
+    category: 'Classic "String-of-Pearls" Configuration (Symmetric Bilateral)', rotterdamCriteria: 'Rotterdam PCOM Positive',
+    follicleCountRt: 15, follicleCountLt: 15, ovarianVolumeRt: '11.4 mL', ovarianVolumeLt: '11.6 mL',
+    stromalEchogenicity: 'Classic Peripheral Follicles with Dense Core',
+    measurements: 'Rt: 37×24×23 mm (11.4 mL) | Lt: 37×24×24 mm (11.6 mL)',
+    findings: 'Textbook symmetric manifestation of PCOM. Precisely 15 peripheral anechoic follicles arrayed like a necklace around central core in both ovaries.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_13.png',
+    imageInfo: { scanner: 'PHILIPS EPIQ 7G', probe: 'C10-3v ENDOVAGINAL', freq: '8.0 MHz', depth: '8 cm', gain: '82 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-014', index: 14, type: 'ovarian_us', patientName: 'Aishwarya Singh', age: 26, uhid: 'PCOS-US-014',
+    category: 'Multi-Follicular Ovaries with Normal Total Volume', rotterdamCriteria: 'Rotterdam PCOM Borderline (MFO Variant)',
+    follicleCountRt: 10, follicleCountLt: 11, ovarianVolumeRt: '7.8 mL', ovarianVolumeLt: '8.2 mL',
+    stromalEchogenicity: 'Normal Central Stroma',
+    measurements: 'Rt: 32×21×19 mm (7.8 mL) | Lt: 33×22×20 mm (8.2 mL)',
+    findings: 'Multi-follicular appearance with 10-11 follicles per ovary, but preserved normal ovarian volume (<10 mL) and non-echogenic central stroma. Often secondary to hypothalamic influence.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_14.png',
+    imageInfo: { scanner: 'CANON APLIO i800', probe: 'PVT-781VT TRANSVAGINAL', freq: '8.5 MHz', depth: '8 cm', gain: '79 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-015', index: 15, type: 'ovarian_us', patientName: 'Keerthi Mishra', age: 35, uhid: 'PCOS-US-015',
+    category: 'Longstanding Anovulatory PCOS with Fibrous Stroma', rotterdamCriteria: 'Rotterdam PCOM Positive (Chronic)',
+    follicleCountRt: 13, follicleCountLt: 14, ovarianVolumeRt: '12.0 mL', ovarianVolumeLt: '12.3 mL',
+    stromalEchogenicity: 'Coarse Hyperechoic Fibrotic Texture',
+    measurements: 'Rt: 38×25×23 mm (12.0 mL) | Lt: 39×25×24 mm (12.3 mL)',
+    findings: 'Chronic anovulatory picture with increased stromal echogenicity and fibrous appearance. Subcapsular follicles measuring 3-7 mm without dominant follicle.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_15.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '84 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-016', index: 16, type: 'ovarian_us', patientName: 'Deepika Kulkarni', age: 27, uhid: 'PCOS-US-016',
+    category: 'High Microfollicular Density (>20 Follicles 2-5 mm)', rotterdamCriteria: 'Rotterdam PCOM Positive (High Follicle Load)',
+    follicleCountRt: 21, follicleCountLt: 23, ovarianVolumeRt: '13.8 mL', ovarianVolumeLt: '14.0 mL',
+    stromalEchogenicity: 'Prominent Central Stroma',
+    measurements: 'Rt: 41×27×24 mm (13.8 mL) | Lt: 42×27×25 mm (14.0 mL)',
+    findings: 'Exceptionally dense peripheral microfollicular ring with >20 follicles under 5 mm per ovary. Strong correlation with anti-Müllerian hormone (AMH) elevations.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_16.png',
+    imageInfo: { scanner: 'PHILIPS EPIQ 7G', probe: 'C10-3v ENDOVAGINAL', freq: '8.0 MHz', depth: '8 cm', gain: '85 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-017', index: 17, type: 'ovarian_us', patientName: 'Lavanya Bhat', age: 29, uhid: 'PCOS-US-017',
+    category: 'Coexisting Simple Functional Follicular Cyst in PCOM', rotterdamCriteria: 'Rotterdam PCOM Positive + Follicular Cyst',
+    follicleCountRt: 8, follicleCountLt: 15, ovarianVolumeRt: '15.4 mL', ovarianVolumeLt: '11.8 mL',
+    stromalEchogenicity: 'Increased Left Central Stroma',
+    measurements: 'Rt Cyst: 21.5 mm (Total Vol: 15.4 mL) | Lt: 38×24×23 mm (11.8 mL)',
+    findings: 'Right ovary shows a benign unilocular thin-walled follicular cyst measuring 21.5 mm. Left ovary shows classic polycystic configuration with 15 peripheral follicles.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_17.png',
+    imageInfo: { scanner: 'CANON APLIO i800', probe: 'PVT-781VT TRANSVAGINAL', freq: '8.5 MHz', depth: '8 cm', gain: '80 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-018', index: 18, type: 'ovarian_us', patientName: 'Ritu Chawla', age: 24, uhid: 'PCOS-US-018',
+    category: 'Polycystic Ovaries with Normal Total Volume (<10 mL)', rotterdamCriteria: 'Rotterdam PCOM Positive (FNPO Criteria Met)',
+    follicleCountRt: 13, follicleCountLt: 14, ovarianVolumeRt: '8.9 mL', ovarianVolumeLt: '9.2 mL',
+    stromalEchogenicity: 'Mild Stromal Increase',
+    measurements: 'Rt: 34×22×20 mm (8.9 mL) | Lt: 35×23×21 mm (9.2 mL)',
+    findings: 'Meets 2018/2023 international PCOS guideline criteria by Follicle Number Per Ovary (FNPO ≥ 12) despite overall ovarian volume remaining under 10 mL.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_18.png',
+    imageInfo: { scanner: 'GE VOLUSON E10 EXPERT', probe: 'RIC5-9-D ENDOCAVITY', freq: '7.5 MHz', depth: '8 cm', gain: '81 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-019', index: 19, type: 'ovarian_us', patientName: 'Swati Mukherjee', age: 31, uhid: 'PCOS-US-019',
+    category: 'Asymmetric Stromal Hypertrophy (Right > Left)', rotterdamCriteria: 'Rotterdam PCOM Positive',
+    follicleCountRt: 17, follicleCountLt: 11, ovarianVolumeRt: '13.6 mL', ovarianVolumeLt: '9.8 mL',
+    stromalEchogenicity: 'Prominent Right Stromal Core',
+    measurements: 'Rt: 40×26×24 mm (13.6 mL) | Lt: 34×23×21 mm (9.8 mL)',
+    findings: 'Marked stromal hypertrophy in right ovary (13.6 mL) with peripheral displacement of 17 follicles. Left ovary is moderately involved with 11 follicles and volume of 9.8 mL.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_19.png',
+    imageInfo: { scanner: 'PHILIPS EPIQ 7G', probe: 'C10-3v ENDOVAGINAL', freq: '8.0 MHz', depth: '8 cm', gain: '83 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  },
+  {
+    id: 'PCOS-US-020', index: 20, type: 'ovarian_us', patientName: 'Nandini Saxena', age: 22, uhid: 'PCOS-US-020',
+    category: 'Baseline Normal Pelvic Sonogram (Ovulatory Phase Control)', rotterdamCriteria: 'Rotterdam PCOM Negative (Normal Physiological)',
+    follicleCountRt: 5, follicleCountLt: 6, ovarianVolumeRt: '6.5 mL', ovarianVolumeLt: '6.1 mL',
+    stromalEchogenicity: 'Normal Preserved Parenchyma',
+    measurements: 'Rt: 31×19×17 mm (6.5 mL) | Lt: 30×19×16 mm (6.1 mL)',
+    findings: 'Healthy normal young female pelvic sonogram. Ovaries exhibit physiologic follicle counts (5-6), normal volumes (6.1-6.5 mL), and normal stromal-parenchymal ratio.',
+    imagePathPublic: '/dataset/ovarian_us/ovarian_us_20.png',
+    imageInfo: { scanner: 'SIEMENS ACUSON SEQUOIA', probe: '9EV3 ENDOVAGINAL', freq: '7.5 MHz', depth: '8 cm', gain: '78 dB', mode: 'B-mode Dual Sector', leftPanel: 'Right Ovary', rightPanel: 'Left Ovary', hasBoundingBox: false }
+  }
+];
+
+function UltrasoundImagingView() {
+  const { selectPatient, setCurrentView } = useAppStore();
+  const [modality, setModality] = useState<'thyroid' | 'ovarian'>('thyroid');
+  const [viewMode, setViewMode] = useState<'original' | 'detection' | 'segmentation'>('original');
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [thyroidCases, setThyroidCases] = useState<UltrasoundScanItem[]>(DEFAULT_THYROID_US_CASES);
+  const [ovarianCases, setOvarianCases] = useState<UltrasoundScanItem[]>(DEFAULT_OVARIAN_US_CASES);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const resThyroid = await fetch('/dataset/thyroid_us_index.json');
+        if (resThyroid.ok) {
+          const data = await resThyroid.json();
+          if (Array.isArray(data) && data.length > 0) {
+            setThyroidCases(data);
+          }
+        }
+      } catch {
+        // Use default thyroid cases
+      }
+
+      try {
+        const resOvarian = await fetch('/dataset/ovarian_us_index.json');
+        if (resOvarian.ok) {
+          const data = await resOvarian.json();
+          if (Array.isArray(data) && data.length > 0) {
+            setOvarianCases(data);
+          }
+        }
+      } catch {
+        // Use default ovarian cases
+      }
+    }
+    loadData();
+  }, []);
+
+  const activeCases = modality === 'thyroid' ? thyroidCases : ovarianCases;
+  const currentCase = activeCases[selectedIndex] || activeCases[0];
+
+  const handleZoom = (delta: number) => {
+    setZoomLevel((prev) => Math.min(2.5, Math.max(0.8, parseFloat((prev + delta).toFixed(1)))));
+  };
+
+  const resetZoom = () => setZoomLevel(1);
+
+  return (
+    <div className="space-y-6 pb-12">
+      {/* Header Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-gray-100">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+            <ScanLine className="w-6 h-6" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900 leading-tight">Ultrasound &amp; Imaging Analysis</h1>
+            <p className="text-xs text-gray-500 mt-0.5">AI-powered detection and clinical analysis for Thyroid and Ovarian ultrasound scans</p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50/70 text-blue-700 text-xs font-medium">
+            <Sparkles className="w-4 h-4 text-blue-600" />
+            <span>AI Diagnostic Engine v2.4 Active</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Modality Selection */}
+      <div className="flex flex-wrap items-center gap-3">
+        <span className="text-sm font-semibold text-gray-700 mr-1">Select Modality:</span>
+        <button
+          type="button"
+          onClick={() => { setModality('thyroid'); setSelectedIndex(0); }}
+          className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm ${
+            modality === 'thyroid'
+              ? 'bg-blue-600 text-white shadow-blue-500/25 ring-2 ring-blue-600 ring-offset-2'
+              : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+          }`}
+        >
+          <Stethoscope className="w-4 h-4" />
+          Thyroid Ultrasound (20 Scans)
+        </button>
+        <button
+          type="button"
+          onClick={() => { setModality('ovarian'); setSelectedIndex(0); }}
+          className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm ${
+            modality === 'ovarian'
+              ? 'bg-purple-600 text-white shadow-purple-500/25 ring-2 ring-purple-600 ring-offset-2'
+              : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+          }`}
+        >
+          <Baby className="w-4 h-4" />
+          Ovarian / PCOS Ultrasound (20 Scans)
+        </button>
+      </div>
+
+      {/* Main Workstation Card */}
+      <div className="bg-[#090d16] border border-gray-800 rounded-2xl shadow-xl overflow-hidden text-white">
+        {/* Top Control Bar matching screenshot */}
+        <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-3.5 border-b border-gray-800 bg-[#0d1322]">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setViewMode('original')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+                viewMode === 'original'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-gray-800/80 text-gray-300 hover:bg-gray-800 hover:text-white'
+              }`}
+            >
+              <Crosshair className="w-4 h-4" />
+              Original Image (No Bounding Box)
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('detection')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+                viewMode === 'detection'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-gray-800/80 text-gray-300 hover:bg-gray-800 hover:text-white'
+              }`}
+            >
+              <Scan className="w-4 h-4" />
+              Detection Overlay
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('segmentation')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+                viewMode === 'segmentation'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-gray-800/80 text-gray-300 hover:bg-gray-800 hover:text-white'
+              }`}
+            >
+              <Layers className="w-4 h-4" />
+              Segmentation
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2 text-xs font-mono text-gray-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Scan {currentCase.index} of 20 &middot; {currentCase.uhid}</span>
+          </div>
+        </div>
+
+        {/* Sonogram Canvas Viewer */}
+        <div className="relative min-h-[500px] flex items-center justify-center p-4 bg-[#030712] overflow-hidden">
+          <div
+            className="relative transition-transform duration-150 ease-out flex items-center justify-center max-w-full"
+            style={{ transform: `scale(${zoomLevel})` }}
+          >
+            {/* The Clean Ultrasound B-mode Scan (No Bounding Boxes) */}
+            <img
+              src={currentCase.imagePathPublic}
+              alt={currentCase.category}
+              className="max-h-[520px] w-auto rounded-lg object-contain shadow-2xl border border-gray-800"
+            />
+
+            {/* Detection Overlay Mode (Interactive AI overlay, only displayed when Detection Overlay is clicked) */}
+            {viewMode === 'detection' && modality === 'thyroid' && (
+              <div className="absolute inset-0 pointer-events-none">
+                <div
+                  className="absolute border-2 border-dashed border-red-500 bg-red-500/10 rounded"
+                  style={{ top: '35%', left: '22%', width: '22%', height: '32%' }}
+                >
+                  <div className="absolute -top-7 left-0 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    Nodule 1 | 0.93
+                  </div>
+                  <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] font-mono text-red-300 bg-black/60 px-1 rounded">
+                    {currentCase.measurements}
+                  </div>
+                </div>
+
+                {currentCase.category.includes('Bilateral') && (
+                  <div
+                    className="absolute border-2 border-dashed border-emerald-400 bg-emerald-500/10 rounded"
+                    style={{ top: '38%', left: '56%', width: '18%', height: '26%' }}
+                  >
+                    <div className="absolute -top-7 left-0 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                      Nodule 2 | 0.87
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {viewMode === 'detection' && modality === 'ovarian' && (
+              <div className="absolute inset-0 pointer-events-none">
+                {/* Right Ovary Detection Box (Left Panel) */}
+                <div
+                  className="absolute border-2 border-dashed border-blue-400 bg-blue-500/10 rounded-xl"
+                  style={{ top: '28%', left: '12%', width: '34%', height: '52%' }}
+                >
+                  <div className="absolute -top-7 left-0 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    Rt Ovary | {currentCase.ovarianVolumeRt || '11.8 mL'} | {currentCase.follicleCountRt ?? 15} Follicles
+                  </div>
+                </div>
+
+                {/* Left Ovary Detection Box (Right Panel) */}
+                <div
+                  className="absolute border-2 border-dashed border-purple-400 bg-purple-500/10 rounded-xl"
+                  style={{ top: '28%', left: '54%', width: '34%', height: '52%' }}
+                >
+                  <div className="absolute -top-7 left-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    Lt Ovary | {currentCase.ovarianVolumeLt || '12.2 mL'} | {currentCase.follicleCountLt ?? 16} Follicles
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Segmentation Mode (Interactive AI overlay, only displayed when Segmentation is clicked) */}
+            {viewMode === 'segmentation' && modality === 'thyroid' && (
+              <div className="absolute inset-0 pointer-events-none">
+                <div
+                  className="absolute bg-amber-500/30 border-2 border-amber-400 rounded-full blur-[1px]"
+                  style={{ top: '36%', left: '23%', width: '20%', height: '30%' }}
+                />
+                {currentCase.category.includes('Bilateral') && (
+                  <div
+                    className="absolute bg-emerald-500/30 border-2 border-emerald-400 rounded-full blur-[1px]"
+                    style={{ top: '39%', left: '57%', width: '16%', height: '24%' }}
+                  />
+                )}
+              </div>
+            )}
+
+            {viewMode === 'segmentation' && modality === 'ovarian' && (
+              <div className="absolute inset-0 pointer-events-none">
+                <div
+                  className="absolute bg-blue-500/25 border-2 border-blue-400 rounded-full blur-[1px]"
+                  style={{ top: '32%', left: '15%', width: '28%', height: '44%' }}
+                />
+                <div
+                  className="absolute bg-purple-500/25 border-2 border-purple-400 rounded-full blur-[1px]"
+                  style={{ top: '32%', left: '57%', width: '28%', height: '44%' }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Floating Zoom Controls bottom right */}
+          <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-black/75 backdrop-blur-md p-1.5 rounded-xl border border-gray-700 shadow-lg z-10">
+            <button
+              type="button"
+              onClick={() => handleZoom(0.2)}
+              className="p-1.5 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              title="Zoom In"
+            >
+              <ZoomIn className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleZoom(-0.2)}
+              className="p-1.5 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              title="Zoom Out"
+            >
+              <ZoomOut className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={resetZoom}
+              className="px-2 py-1 text-[11px] font-mono text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              title="Reset Zoom"
+            >
+              {Math.round(zoomLevel * 100)}%
+            </button>
+            <button
+              type="button"
+              onClick={() => window.open(currentCase.imagePathPublic, '_blank')}
+              className="p-1.5 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+              title="Open Fullscreen Raw Image"
+            >
+              <Maximize2 className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Mode Selector Thumbnails matching screenshot bottom */}
+        <div className="p-4 border-t border-gray-800 bg-[#0b101d]">
+          <p className="text-xs font-semibold text-gray-400 mb-2.5 uppercase tracking-wider">
+            Diagnostic Views (Active Scan #{currentCase.index} &middot; {currentCase.category}):
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button
+              type="button"
+              onClick={() => setViewMode('original')}
+              className={`p-2 rounded-xl border text-center transition-all ${
+                viewMode === 'original'
+                  ? 'border-blue-500 bg-blue-950/60 shadow-md ring-2 ring-blue-500/50'
+                  : 'border-gray-800 bg-[#080c16] hover:border-gray-700'
+              }`}
+            >
+              <div className="h-20 bg-black rounded-lg overflow-hidden flex items-center justify-center mb-1.5 border border-gray-800">
+                <img src={currentCase.imagePathPublic} alt="Original" className="h-full w-full object-cover" />
+              </div>
+              <p className="text-xs font-medium text-gray-200">Original Image</p>
+              <p className="text-[10px] text-emerald-400 font-semibold">No Bounding Box</p>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('detection')}
+              className={`p-2 rounded-xl border text-center transition-all ${
+                viewMode === 'detection'
+                  ? 'border-blue-500 bg-blue-950/60 shadow-md ring-2 ring-blue-500/50'
+                  : 'border-gray-800 bg-[#080c16] hover:border-gray-700'
+              }`}
+            >
+              <div className="h-20 bg-black rounded-lg overflow-hidden flex items-center justify-center mb-1.5 border border-gray-800 relative">
+                <img src={currentCase.imagePathPublic} alt="Detection" className="h-full w-full object-cover" />
+                <div className="absolute inset-2 border border-dashed border-red-500 bg-red-500/20 rounded"></div>
+              </div>
+              <p className="text-xs font-medium text-gray-200">Detection Overlay</p>
+              <p className="text-[10px] text-blue-400">AI Bounding Box</p>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('segmentation')}
+              className={`p-2 rounded-xl border text-center transition-all ${
+                viewMode === 'segmentation'
+                  ? 'border-blue-500 bg-blue-950/60 shadow-md ring-2 ring-blue-500/50'
+                  : 'border-gray-800 bg-[#080c16] hover:border-gray-700'
+              }`}
+            >
+              <div className="h-20 bg-black rounded-lg overflow-hidden flex items-center justify-center mb-1.5 border border-gray-800 relative">
+                <img src={currentCase.imagePathPublic} alt="Segmentation" className="h-full w-full object-cover" />
+                <div className="absolute inset-3 rounded-full bg-purple-500/40 border border-purple-400"></div>
+              </div>
+              <p className="text-xs font-medium text-gray-200">Segmentation</p>
+              <p className="text-[10px] text-purple-400">Organ Mask</p>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setSelectedIndex((prev) => (prev + 1) % activeCases.length)}
+              className="p-2 rounded-xl border border-gray-800 bg-[#080c16] hover:border-gray-700 text-center transition-all"
+            >
+              <div className="h-20 bg-black rounded-lg overflow-hidden flex items-center justify-center mb-1.5 border border-gray-800">
+                <img
+                  src={activeCases[(selectedIndex + 1) % activeCases.length].imagePathPublic}
+                  alt="Next View"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <p className="text-xs font-medium text-gray-200">Next Case Scan</p>
+              <p className="text-[10px] text-gray-400">#{activeCases[(selectedIndex + 1) % activeCases.length].index}</p>
+            </button>
+          </div>
+        </div>
+
+        {/* 20 Ultrasound Images Strip Carousel */}
+        <div className="p-4 border-t border-gray-800 bg-[#070b14]">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-semibold text-gray-300">
+              Select from all 20 {modality === 'thyroid' ? 'Thyroid' : 'Ovarian / PCOS'} Ultrasound Scans (Clean B-mode, No Bounding Box):
+            </span>
+            <span className="text-xs font-mono text-gray-500">Click any card to inspect scan</span>
+          </div>
+
+          <div className="flex gap-2.5 overflow-x-auto pb-2 scrollbar-thin">
+            {activeCases.map((c, i) => (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => { setSelectedIndex(i); setViewMode('original'); }}
+                className={`flex-shrink-0 w-36 p-1.5 rounded-xl border text-left transition-all ${
+                  selectedIndex === i
+                    ? 'border-blue-500 bg-blue-950/70 ring-1 ring-blue-500 shadow-md'
+                    : 'border-gray-800 bg-[#0b101c] hover:border-gray-700'
+                }`}
+              >
+                <div className="h-16 w-full rounded-lg bg-black overflow-hidden mb-1 border border-gray-800">
+                  <img src={c.imagePathPublic} alt={c.uhid} className="h-full w-full object-cover" />
+                </div>
+                <div className="text-[11px] font-bold text-gray-200 truncate">Scan #{c.index}</div>
+                <div className="text-[9px] text-gray-400 truncate">{c.patientName}</div>
+                <div className="text-[9px] text-emerald-400 truncate font-mono">
+                  {c.rotterdamCriteria
+                    ? (c.rotterdamCriteria.includes('Positive') ? 'PCOM Pos' : c.rotterdamCriteria.includes('Borderline') ? 'Borderline' : 'Normal')
+                    : (c.tirads ? c.tirads.split('(')[0] : 'Scanned')}
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Clinical Sonography Report Card */}
+      <Card className="p-5 border-gray-200 shadow-sm bg-white">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-100">
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-bold text-gray-900">{currentCase.category}</h3>
+              <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 font-semibold">
+                {currentCase.rotterdamCriteria || currentCase.tirads}
+              </Badge>
+            </div>
+            <p className="text-xs text-gray-500 mt-1">
+              Patient: <span className="font-semibold text-gray-800">{currentCase.patientName}</span> ({currentCase.age}y) &middot; UHID: <span className="font-mono text-teal-700 font-semibold">{currentCase.uhid}</span>
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.open(currentCase.imagePathPublic, '_blank')}
+              className="text-xs text-blue-700 border-blue-200 hover:bg-blue-50 flex items-center gap-1.5"
+            >
+              <Download className="w-3.5 h-3.5" /> Download Clean Image
+            </Button>
+            <Button
+              size="sm"
+              onClick={() => {
+                selectPatient(null);
+                setCurrentView('screening');
+              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white text-xs flex items-center gap-1.5"
+            >
+              <Shield className="w-3.5 h-3.5" /> Run Clinical Screening
+            </Button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 text-sm">
+          <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-100 space-y-1.5">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sonographic Measurements</p>
+            <p className="text-sm font-bold text-gray-900">{currentCase.measurements}</p>
+            <p className="text-xs text-gray-500">
+              {modality === 'ovarian' && currentCase.follicleCountRt !== undefined
+                ? `Follicles: Rt ${currentCase.follicleCountRt} · Lt ${currentCase.follicleCountLt} | Volumes: Rt ${currentCase.ovarianVolumeRt || '-'} · Lt ${currentCase.ovarianVolumeLt || '-'}`
+                : 'Transverse · Longitudinal Dimensions'}
+            </p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-100 space-y-1.5">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Probe &amp; Acoustic Parameters</p>
+            <p className="text-xs text-gray-700">
+              Scanner: <span className="font-semibold">{currentCase.imageInfo.scanner || (modality === 'ovarian' ? 'GE VOLUSON E10' : 'LOGIQ E10')}</span>
+            </p>
+            <p className="text-xs text-gray-700">
+              Depth: <span className="font-semibold">{currentCase.imageInfo.depth}</span> &middot; Gain: <span className="font-semibold">{currentCase.imageInfo.gain}</span> &middot; Freq: <span className="font-semibold">{currentCase.imageInfo.freq}</span>
+            </p>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-100 space-y-1.5">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sonographic Impression</p>
+            <p className="text-xs text-gray-700 leading-relaxed">{currentCase.findings}</p>
+            {currentCase.stromalEchogenicity && (
+              <p className="text-xs text-purple-700 font-medium">Stroma: {currentCase.stromalEchogenicity}</p>
+            )}
+          </div>
+        </div>
+      </Card>
     </div>
   );
 }
@@ -2420,6 +3232,7 @@ export default function Home() {
       case 'patients': return <PatientsView />;
       case 'patient-detail': return <PatientDetailView />;
       case 'upload-report': return <UploadReportView />;
+      case 'ultrasound': return <UltrasoundImagingView />;
       case 'screening': return <ScreeningView />;
       case 'prediction': return <PredictionView />;
       case 'trends': return <TrendsView />;

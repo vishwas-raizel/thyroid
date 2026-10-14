@@ -131,6 +131,7 @@ export type ViewType =
   | "patients"
   | "patient-detail"
   | "upload-report"
+  | "ultrasound"
   | "screening"
   | "prediction"
   | "trends"
